@@ -62,22 +62,22 @@ plots:
     refresh_period: 1.0
     log_y: true
     y_range:
-    - 1.0e-09
-    - 1000.0
+    - 1.0e-08
+    - 1100.0
   SHUTTER_VAC_plot:
     source: tango://localhost:45678/maxi/sim/1/shutter_vac_pressure#dbase=no
     refresh_period: 1.0
     log_y: true
     y_range:
-    - 1.0e-09
-    - 1000.0
+    - 1.0e-08
+    - 1100.0
   DIFF_VAC_plot:
     source: tango://localhost:45678/maxi/sim/1/diff_vac_pressure#dbase=no
     refresh_period: 1.0
     log_y: true
     y_range:
-    - 1.0e-09
-    - 1000.0
+    - 1.0e-08
+    - 1100.0
 extra_channels:
   chamber_pressure: tango://localhost:45678/maxi/sim/1/maxi_vac_pressure#dbase=no
   detector_temperature: tango://localhost:45678/maxi/sim/1/detector_temp#dbase=no

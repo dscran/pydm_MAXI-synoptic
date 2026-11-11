@@ -36,3 +36,27 @@ def shutter(is_open):
     if is_open:
         return "SHUTTER_OPEN"
     return "SHUTTER_CLOSED"
+
+
+# The beam comes in at the beamline and ends at the diode. The valve and the shutter can stop it.
+# In the SVG, the beam after the shutter lies inside the group of the beam after the valve, so it is
+# only drawn when the valve lets the beam pass as well.
+
+
+# A valve in an unknown state is drawn as letting the beam pass: assuming beam is the safer mistake.
+@state_rule(channel="valve_open", assets={"BEAM_VALVE_OPEN", "BEAM_VALVE_CLOSED"}, unknown="BEAM_VALVE_OPEN")
+def beam_after_valve(is_open):
+    if is_open:
+        return "BEAM_VALVE_OPEN"
+    return "BEAM_VALVE_CLOSED"
+
+
+@state_rule(
+    channel="shutter_open",
+    assets={"BEAM_SHUTTER_OPEN", "BEAM_SHUTTER_CLOSED"},
+    unknown="BEAM_SHUTTER_UNKNOWN",
+)
+def beam_after_shutter(is_open):
+    if is_open:
+        return "BEAM_SHUTTER_OPEN"
+    return "BEAM_SHUTTER_CLOSED"

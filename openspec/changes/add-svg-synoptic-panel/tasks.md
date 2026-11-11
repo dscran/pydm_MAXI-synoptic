@@ -76,3 +76,7 @@
 ## 12. Fixed y-axis
 
 - [x] 12.1 Add the optional plot key `y_range: [lowest, highest]` to the schema and apply it to the plot's y-axis (design D6). Set it for the pressure plots in both YAML files. Verify with unit tests for valid and invalid ranges, including the `log_y` rule and numbers that YAML reads as text, with pytest-qt tests that a linear and a logarithmic plot show the fixed range and keep it for values outside of it, and with a screenshot of the panel on the simulator.
+
+## 13. Beam path
+
+- [x] 13.1 Draw the beam in `MAXI_synoptic_v2.svg` from the entry to the diode as nested groups (design D16), keep the thin dashed beam path up to the detector, remove the beam pieces of the shutter assets, draw a valve in an unknown state as letting the beam pass, and add the rules `beam_after_valve` and `beam_after_shutter`. Report a missing channel once when several rules share it. Verify with pytest-qt pixel tests on the real SVG for all four combinations of valve and shutter and for unknown states, and by screenshots.

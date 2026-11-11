@@ -97,6 +97,9 @@ Inkscape labels), so keep these:
 | `<PANEL>_plot` | plot slot, covered by a time plot |
 | `DATETIME_value` | shows the local date and time |
 | `<X>_OPEN`, `<X>_CLOSED`, `<X>_UNKNOWN` | three drawings of a valve or shutter; the panel shows one of them |
+| `BEAM_axis`, `BEAM_entry` | the dashed beam path and the beam up to the valve; always shown |
+| `BEAM_VALVE_OPEN`, `_CLOSED` | the beam behind the valve; the panel shows one of them, and `_OPEN` also while the valve state is unknown |
+| `BEAM_SHUTTER_OPEN`, `_CLOSED`, `_UNKNOWN` | the beam behind the shutter. They must stay inside the group `BEAM_VALVE_OPEN`, so that a closed valve hides them too |
 | `MAXICHAMBER`, `DETECTOR` | the panel sets their fill color and hatches them while the value is unknown |
 | `BACKGROUND` | its fill color is used around the drawing |
 

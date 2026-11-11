@@ -98,6 +98,32 @@ The shutter SHALL show `SHUTTER_OPEN` when its boolean channel is True, `SHUTTER
 - **WHEN** the shutter channel has INVALID quality
 - **THEN** only `SHUTTER_UNKNOWN` is visible
 
+### Requirement: Beam path
+The panel SHALL always draw the nominal beam path as a thin, dim, dashed line from the entry at the beamline to the detector. On top of it, it SHALL draw the beam itself as a solid line: from the entry to the valve, on to the shutter unless the valve is closed, and on to the diode if the shutter is open as well. A closed valve or shutter shows a stop mark where it stops the beam.
+
+#### Scenario: Beam on the diode
+- **WHEN** the valve and the shutter are open
+- **THEN** a solid beam is drawn from the entry to the diode, and the dashed path continues to the detector
+
+#### Scenario: Shutter closed
+- **WHEN** the valve is open and the shutter is closed
+- **THEN** the solid beam ends at the shutter with a stop mark, and only the dashed path is drawn behind it
+
+#### Scenario: Valve closed
+- **WHEN** the valve is closed and the shutter is open
+- **THEN** the solid beam ends at the valve with a stop mark, and only the dashed path is drawn behind it
+
+### Requirement: Unknown states on the beam path
+A valve in an unknown state SHALL be drawn as letting the beam pass, because wrongly showing beam is the safer mistake. Behind a shutter in an unknown state, the beam SHALL be drawn as a stronger dashed line up to the diode, provided the beam reaches the shutter.
+
+#### Scenario: Valve unknown
+- **WHEN** the valve state is unknown and the shutter is closed
+- **THEN** the solid beam is drawn through the valve up to the shutter
+
+#### Scenario: Shutter unknown
+- **WHEN** the valve is open and the shutter state is unknown
+- **THEN** the beam is solid up to the shutter and strongly dashed from the shutter to the diode
+
 ### Requirement: Initial state
 At startup, before any value arrives, every rule SHALL show its unknown look, whatever visibility and colors the SVG file was saved with.
 

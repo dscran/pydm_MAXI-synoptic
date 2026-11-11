@@ -114,6 +114,7 @@ def test_panel_follows_the_simulator(qtbot, display, simulator):
     qtbot.waitUntil(
         lambda: visible_assets(display) == {"VALVE_OPEN", "SHUTTER_CLOSED"}, timeout=UPDATE_TIMEOUT_MS
     )
+    assert view.is_visible("BEAM_VALVE_OPEN") and view.is_visible("BEAM_SHUTTER_CLOSED")
     device.valve_open = False
     qtbot.waitUntil(
         lambda: visible_assets(display) == {"VALVE_CLOSED", "SHUTTER_CLOSED"}, timeout=UPDATE_TIMEOUT_MS

@@ -25,16 +25,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.3470439"
-     inkscape:cx="1014.2809"
-     inkscape:cy="494.17379"
+     inkscape:zoom="1.1211136"
+     inkscape:cx="1389.6897"
+     inkscape:cy="550.79163"
      inkscape:window-width="1829"
      inkscape:window-height="970"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer_hardware"
-     showguides="true" />
+     inkscape:current-layer="layer_beam"
+     showguides="true"
+     showgrid="false" />
   <g
      id="layer_background"
      inkscape:groupmode="layer"
@@ -155,9 +156,9 @@
        style="fill:#6b7480;stroke:#aab4bf;stroke-width:3" />
     <path
        id="BEAM_axis"
-       d="M 1894.3326,552 H 320"
-       style="fill:none;stroke:#f0c75e;stroke-width:2;stroke-dasharray:10, 8;stroke-opacity:0.55"
-       sodipodi:nodetypes="cc" />
+       inkscape:label="beam path (always shown)"
+       d="M 1894,552 H 320"
+       style="fill:none;stroke:#f0c75e;stroke-width:2;stroke-dasharray:10, 8;stroke-opacity:0.55" />
     <path
        id="BEAM_arrow"
        d="m 1874,530 -26,22 26,22"
@@ -928,10 +929,6 @@
          height="46"
          rx="3"
          style="fill:#aab4bf;stroke:none" />
-      <path
-         id="SHUTTER_OPEN_beam"
-         d="M 1272,552 H 1044"
-         style="fill:none;stroke:#f0c75e;stroke-width:8;stroke-linecap:round" />
       <text
          id="SHUTTER_OPEN_word"
          xml:space="preserve"
@@ -951,10 +948,6 @@
          height="166"
          rx="6"
          style="fill:#262b31;stroke:#4b8fc4;stroke-width:4" />
-      <path
-         id="SHUTTER_CLOSED_beam"
-         d="M 1272,552 H 1198"
-         style="fill:none;stroke:#f0c75e;stroke-width:8;stroke-linecap:round" />
       <rect
          id="SHUTTER_CLOSED_blade"
          x="1132"
@@ -969,6 +962,65 @@
          x="1158"
          y="462"
          style="font-family:sans-serif;font-size:22px;font-weight:bold;fill:#4b8fc4;text-anchor:middle">CLOSED</text>
+    </g>
+  </g>
+  <g
+     id="layer_beam"
+     inkscape:groupmode="layer"
+     inkscape:label="beam">
+    <path
+       id="BEAM_entry"
+       inkscape:label="beam: entry to valve"
+       d="M 1894,552 H 1476"
+       style="fill:none;stroke:#f0c75e;stroke-width:6" />
+    <g
+       id="BEAM_VALVE_CLOSED"
+       inkscape:label="beam stopped at valve"
+       style="display:none">
+      <circle
+         id="BEAM_VALVE_CLOSED_stop"
+         cx="1478"
+         cy="552"
+         r="1.4466689"
+         style="display:inline;fill:#f0c75e;stroke:#f0c75e;stroke-width:2;stroke-opacity:1" />
+    </g>
+    <g
+       id="BEAM_VALVE_OPEN"
+       inkscape:label="beam after valve (open or unknown)"
+       style="display:inline">
+      <path
+         id="BEAM_VALVE_OPEN_line"
+         d="M 1476,552 H 1194"
+         style="fill:none;stroke:#f0c75e;stroke-width:6" />
+      <g
+         id="BEAM_SHUTTER_UNKNOWN"
+         inkscape:label="beam after shutter: unknown"
+         style="display:inline">
+        <path
+           id="BEAM_SHUTTER_UNKNOWN_line"
+           d="M 1194,552 H 553"
+           style="fill:none;stroke:#f0c75e;stroke-width:5;stroke-dasharray:10, 8;stroke-dashoffset:16;stroke-opacity:0.8" />
+      </g>
+      <g
+         id="BEAM_SHUTTER_CLOSED"
+         inkscape:label="beam stopped at shutter"
+         style="display:inline">
+        <circle
+           id="BEAM_SHUTTER_CLOSED_stop"
+           cx="1198"
+           cy="552"
+           r="1.616536"
+           style="display:inline;fill:#f0c75e;stroke:#f0c75e;stroke-width:2;stroke-opacity:1" />
+      </g>
+      <g
+         id="BEAM_SHUTTER_OPEN"
+         inkscape:label="beam after shutter"
+         style="display:none">
+        <path
+           id="BEAM_SHUTTER_OPEN_line"
+           d="M 1194,552 H 553"
+           style="fill:none;stroke:#f0c75e;stroke-width:6" />
+      </g>
     </g>
   </g>
 </svg>

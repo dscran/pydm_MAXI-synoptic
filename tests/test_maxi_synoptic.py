@@ -18,7 +18,8 @@ REPO_DIR = Path(__file__).parent.parent
 UNREACHABLE = "localhost:1"
 NUM_VALUE_SLOTS = 20
 NUM_PLOT_SLOTS = 3
-NUM_RULES = 4
+NUM_RULES = 6
+NUM_RULE_CHANNELS = 4
 # as set in maxi_synoptic.qss
 VALUE_FONT_PX = 30
 VALUE_COLOR = "#f2f4f7"
@@ -73,9 +74,9 @@ def test_style_sheet_sets_value_font_and_color(qtbot, qapp, tmp_path):
 
 def test_font_does_not_scale_with_the_window(qtbot, display):
     label = display.overlays.labels[0]
-    full_height = label.height()
     display.resize(960, 540)
-    qtbot.waitUntil(lambda: label.height() == full_height // 2, timeout=2000)
+    qtbot.waitUntil(lambda: display.view.scale() == pytest.approx(0.5), timeout=10000)
+    assert label.height() == round(display.view.element_rect("DIODE_current_value").height())
     assert label.fontInfo().pixelSize() == VALUE_FONT_PX
 
 
@@ -155,7 +156,7 @@ def test_config_file_is_valid_and_complete(file_name):
     assert warnings == []
     assert len(config.values) == NUM_VALUE_SLOTS
     assert len(config.plots) == NUM_PLOT_SLOTS
-    assert len(config.extra_channels) == NUM_RULES
+    assert len(config.extra_channels) == NUM_RULE_CHANNELS
 
 
 def test_placeholders_are_marked():

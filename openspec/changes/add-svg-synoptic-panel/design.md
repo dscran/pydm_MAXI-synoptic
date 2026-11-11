@@ -264,6 +264,25 @@ first layout, but is not loaded anymore. Version 2 uses the same ids and:
 - static hardware (shutter chamber, diff. pump) in a neutral color, because no rule colors it;
 - a legend of the rule colors in the footer.
 
+### D16 Beam path
+`BEAM_axis` is the nominal path: a thin, dim, dashed line from the entry to the detector that is always
+shown. `BEAM_entry` (entry to valve) is a static solid line. The rest of the beam is drawn by two more
+state rules, with no change to the rule framework:
+- `beam_after_valve` on channel `valve_open` shows `BEAM_VALVE_OPEN` or `BEAM_VALVE_CLOSED`. Its unknown
+  asset is `BEAM_VALVE_OPEN` as well: a valve in an unknown state is drawn as letting the beam pass,
+  because wrongly showing beam is the safer mistake.
+- `beam_after_shutter` on channel `shutter_open` shows `BEAM_SHUTTER_OPEN`, `BEAM_SHUTTER_CLOSED` or
+  `BEAM_SHUTTER_UNKNOWN`.
+
+In the SVG, the three `BEAM_SHUTTER_*` groups lie inside the `BEAM_VALVE_OPEN` group. SVG hides the
+children of a hidden group, so the beam behind the shutter needs both states without a rule that reads
+two channels. The closed groups hold a stop mark. `BEAM_SHUTTER_UNKNOWN` holds stronger dashes that lie
+exactly on the dashes of `BEAM_axis` (same dash pattern, shifted with `stroke-dashoffset`).
+
+Several rules may now share a channel. Validation reports a missing channel once.
+- *Alternative:* rules with several channels. Rejected: it changes the framework and the spec for
+  something the SVG structure already gives.
+
 ## Risks / Trade-offs
 
 - [`boundsOnElement` and `render(painter, id, bounds)` might handle the element's own transform

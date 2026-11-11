@@ -67,6 +67,14 @@ def test_rule_channel_not_in_extra_channels():
     assert "'switch'" in errors[0]
 
 
+def test_missing_channel_of_several_rules_is_reported_once():
+    second_rule = FakeRule("switch", frozenset({"ON"}))
+    errors, _ = check(
+        changed("extra_channels", {"level": "a/b/c/level"}), rules=(TANK_RULE, SWITCH_RULE, second_rule)
+    )
+    assert len(errors) == 1
+
+
 def test_unconfigured_slots_give_warnings():
     errors, warnings = check(changed("values", {"A_value": {"source": "a/b/c/d"}}), SVG_IDS | {"C_plot"})
     assert errors == []

@@ -3,6 +3,7 @@ from pathlib import Path
 
 import numpy as np
 import pytest
+from qtpy.QtGui import QColor
 
 import maxi_rules
 from maxi_rules import BLUE, GRAY, GREEN, YELLOW
@@ -342,11 +343,117 @@ def test_startup_shows_only_unknown_assets(maxi_view):
 
 
 def test_rules_change_the_svg(maxi_view):
-    bindings = {rule.channel: RuleBinding(rule, maxi_view) for rule in rules.registered_rules()}
-    for binding in bindings.values():
+    bindings = [RuleBinding(rule, maxi_view) for rule in rules.registered_rules()]
+    values = {"chamber_pressure": 3e-7, "valve_open": 1}
+    for binding in bindings:
         binding.connection_changed(True)
-    bindings["chamber_pressure"].value_changed(3e-7)
-    bindings["valve_open"].value_changed(1)
+        if binding.rule.channel in values:
+            binding.value_changed(values[binding.rule.channel])
     assert maxi_view.fill("MAXICHAMBER") == GREEN
     assert maxi_view.hatched() == {"DETECTOR"}
     assert visible_assets(maxi_view) == {"VALVE_OPEN", "SHUTTER_UNKNOWN"}
+
+
+# --- the beam on the real SVG ---
+
+BEAM_COLOR = "#f0c75e"
+BEAM_Y = 552
+# x between the valve and the shutter, and between the shutter and the diode (between two bellow ribs)
+AFTER_VALVE_X = 1300
+AFTER_SHUTTER_X = 900
+BEFORE_VALVE_X = 1500
+
+
+@pytest.fixture
+def beam_view(qtbot):
+    svg_view = SvgView(SvgDom.from_file(MAXI_SVG))
+    qtbot.addWidget(svg_view)
+    svg_view.resize(1920, 1080)
+    svg_view.show()
+    qtbot.waitExposed(svg_view)
+    return svg_view
+
+
+def has_beam(svg_view, x):
+    svg_view.flush()
+    return QColor(svg_view.grab().toImage().pixel(x, BEAM_Y)).name() == BEAM_COLOR
+
+
+@pytest.mark.parametrize(
+    "valve_open, shutter_open, after_valve, after_shutter",
+    [
+        (True, True, True, True),
+        (True, False, True, False),
+        (False, True, False, False),
+        (False, False, False, False),
+    ],
+)
+def test_beam_is_stopped_by_valve_and_shutter(
+    beam_view, valve_open, shutter_open, after_valve, after_shutter
+):
+    bindings = [RuleBinding(rule, beam_view) for rule in rules.registered_rules()]
+    values = {"valve_open": valve_open, "shutter_open": shutter_open}
+    for binding in bindings:
+        binding.connection_changed(True)
+        if binding.rule.channel in values:
+            binding.value_changed(values[binding.rule.channel])
+    assert has_beam(beam_view, BEFORE_VALVE_X)
+    assert has_beam(beam_view, AFTER_VALVE_X) == after_valve
+    assert has_beam(beam_view, AFTER_SHUTTER_X) == after_shutter
+
+
+def test_beam_passes_a_valve_in_unknown_state(beam_view):
+    for rule in rules.registered_rules():
+        RuleBinding(rule, beam_view)
+    assert has_beam(beam_view, BEFORE_VALVE_X)
+    assert has_beam(beam_view, AFTER_VALVE_X)
+    # behind a shutter in unknown state, the beam is only dashed
+    assert beam_view.is_visible("BEAM_SHUTTER_UNKNOWN")
+    assert not has_beam(beam_view, AFTER_SHUTTER_X)
+
+
+def test_beam_passes_unknown_valve_up_to_closed_shutter(beam_view):
+    for rule in rules.registered_rules():
+        binding = RuleBinding(rule, beam_view)
+        if rule.channel == "shutter_open":
+            binding.connection_changed(True)
+            binding.value_changed(False)
+    assert has_beam(beam_view, AFTER_VALVE_X)
+    assert not has_beam(beam_view, AFTER_SHUTTER_X)
+
+
+def is_yellowish(color):
+    return color.red() > color.blue() + 30 and color.green() > color.blue() + 30
+
+
+def test_beam_path_is_always_drawn(beam_view):
+    """The thin dashed path stays, also behind a closed valve and up to the detector."""
+    for rule in rules.registered_rules():
+        binding = RuleBinding(rule, beam_view)
+        binding.connection_changed(True)
+        if rule.channel == "valve_open":
+            binding.value_changed(False)
+    beam_view.flush()
+    image = beam_view.grab().toImage()
+    detector_pipe = range(330, 480)  # between the detector and the chamber
+    behind_valve = range(1200, 1330)
+    for columns in (detector_pipe, behind_valve):
+        yellowish = [x for x in columns if is_yellowish(QColor(image.pixel(x, BEAM_Y)))]
+        assert len(yellowish) > 20
+
+
+def test_beam_rules_show_one_asset_each():
+    view = FakeView()
+    beam_rules = [
+        rule for rule in rules.registered_rules() if isinstance(rule, StateRule) and "BEAM" in rule.unknown
+    ]
+    bindings = [RuleBinding(rule, view) for rule in beam_rules]
+    assert len(bindings) == 2
+    assert view.shown() == {"BEAM_VALVE_OPEN", "BEAM_SHUTTER_UNKNOWN"}
+    for binding in bindings:
+        binding.connection_changed(True)
+        binding.value_changed(1)
+    assert view.shown() == {"BEAM_VALVE_OPEN", "BEAM_SHUTTER_OPEN"}
+    for binding in bindings:
+        binding.value_changed(0)
+    assert view.shown() == {"BEAM_VALVE_CLOSED", "BEAM_SHUTTER_CLOSED"}

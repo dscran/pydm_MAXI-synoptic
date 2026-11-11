@@ -64,10 +64,12 @@ def _missing_rule_elements(rules, svg_ids):
 
 
 def _missing_rule_channels(rules, config):
+    # Several rules may share a channel; report it once
+    channels = dict.fromkeys(rule.channel for rule in rules)
     return [
-        f"rule channel '{rule.channel}' is not in extra_channels"
-        for rule in rules
-        if rule.channel not in config.extra_channels
+        f"rule channel '{channel}' is not in extra_channels"
+        for channel in channels
+        if channel not in config.extra_channels
     ]
 
 
