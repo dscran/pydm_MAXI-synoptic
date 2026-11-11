@@ -37,10 +37,10 @@ The simulator SHALL offer the commands `SetInvalid(name)` and `ClearInvalid(name
 - **THEN** the command fails with a Tango error naming `no_such_attr`
 
 ### Requirement: Runs without a Tango database
-The simulator SHALL run without a Tango database, from the command line on a fixed port (default 45678, set with `--port`), and inside tests through a Tango test context. Clients address it as `tango://<host>:<port>/maxi/sim/1/<attribute>#dbase=no`.
+The simulator SHALL run without a Tango database, from the command line on a fixed port (default 45678, set with `--port`), and inside tests through a Tango test context. Clients address it as `tango://<host>:<port>/maxi/sim/1/<attribute>#dbase=no`. On the command line it is started with the installed command `maxi-synoptic-sim`.
 
 #### Scenario: Manual start
-- **WHEN** a user runs the simulator with `--port 45678`
+- **WHEN** a user runs `maxi-synoptic-sim --port 45678`
 - **THEN** `tango://localhost:45678/maxi/sim/1/<attribute>#dbase=no` can be read until the simulator is stopped
 
 ### Requirement: Drift mode
@@ -55,8 +55,8 @@ With `--drift`, the simulator SHALL change its values by itself, so that all col
 - **THEN** all values stay at their initial values
 
 ### Requirement: Simulator configuration
-The repository SHALL contain `maxi_synoptic_sim.yaml`, which connects every value slot, plot and rule channel of the panel to the simulator on its default port. It passes startup validation against `MAXI_synoptic.svg` with no errors and no warnings.
+The installed package SHALL contain `sim.json`, the bundled configuration named `sim`, which connects every signal of the panel to the simulator on its default port. It passes the configuration check of the `maxi-synoptic` command with no errors and no warnings.
 
 #### Scenario: Panel on the simulator
-- **WHEN** the simulator runs with default settings and the panel is started with macro `config=maxi_synoptic_sim.yaml`
-- **THEN** the panel starts without validation errors or warnings, and every value slot shows a value
+- **WHEN** the simulator runs with default settings and the panel is started with `maxi-synoptic --config sim`
+- **THEN** the panel starts without configuration errors or warnings, and every value slot shows a value

@@ -1,16 +1,26 @@
 """The parts of the simulator that need no device server. The device itself is used by test_integration."""
 
+import json
+import logging
 import math
 
 import pytest
 
-from sim import maxi_sim
-from sim.maxi_sim import ATTRIBUTES, ATTRIBUTE_NAMES, PLOTTED, RULE_CHANNELS
+from maxi_synoptic import cli
+from maxi_synoptic import sim as maxi_sim
+from maxi_synoptic.sim import ATTRIBUTES, DEFAULT_PORT
 
 
-def test_rule_channels_and_plots_use_existing_attributes():
-    assert set(RULE_CHANNELS.values()) <= set(ATTRIBUTE_NAMES)
-    assert set(PLOTTED.values()) <= set(ATTRIBUTE_NAMES)
+def test_sim_configuration_connects_every_signal_to_the_simulator():
+    bundled = json.loads(cli.BUNDLED_CONFIGS["sim"].read_text())
+    assert bundled == maxi_sim.panel_signals(f"localhost:{DEFAULT_PORT}")
+
+
+def test_sim_configuration_passes_the_check(caplog):
+    with caplog.at_level(logging.WARNING, logger=cli.__name__):
+        signals = cli.load_config(cli.config_path("sim"))
+    assert caplog.records == []
+    assert set(signals) == cli.panel_signals()
 
 
 def test_attribute_types():

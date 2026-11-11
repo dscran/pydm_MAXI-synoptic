@@ -2,28 +2,26 @@
 
 ## Purpose
 
-Changes the appearance of SVG elements from control system values. Color rules set an element's fill
-color, and state rules show one of several SVG assets. Both have a defined look when a value is unknown.
+Changes the look of the drawing from control system values: PyDM rules colour the chamber and the
+detector, and PyDM symbols show the state drawings of the valve, the shutter and the beam. Unknown
+values have a defined look, set by the style sheet.
 
 ## Requirements
 
-### Requirement: Rules use extra channels
-Every color and state rule SHALL read exactly one channel, named by its key in `extra_channels`, and SHALL declare the SVG element ids it changes. Rules are defined in Python, not in the YAML.
-
-#### Scenario: Rule channel from configuration
-- **WHEN** the chamber color rule uses channel `chamber_pressure` and `extra_channels.chamber_pressure` is `maxi/vac/gauge1/pressure`
-- **THEN** the rule receives the values of `maxi/vac/gauge1/pressure`
-
 ### Requirement: Unknown values
-A rule's value SHALL be unknown when its channel is disconnected, the attribute quality is INVALID, the value is NaN, the value has a type the rule cannot use, or no value has arrived yet. ALARM and WARNING quality do not make a value unknown.
+A colour or state SHALL be unknown when its channel is disconnected, the attribute quality is INVALID, or no value has arrived yet. ALARM and WARNING quality do not make a value unknown.
 
 #### Scenario: Before the first value
-- **WHEN** the panel has just started and a rule's channel has not sent a value
-- **THEN** the rule shows its unknown look
+- **WHEN** the panel has just started and the chamber pressure channel has not connected yet
+- **THEN** `MAXICHAMBER` shows its unknown look
 
 #### Scenario: Alarm quality
 - **WHEN** the chamber pressure is 1e-6 with ALARM quality
 - **THEN** `MAXICHAMBER` is green, as for VALID quality
+
+#### Scenario: Invalid quality
+- **WHEN** the detector temperature has INVALID quality
+- **THEN** `DETECTOR` shows its unknown look
 
 ### Requirement: Color threshold bands
 A color rule SHALL compare its value against an ordered list of upper limits. The first band with `value <= upper` gives the color; a value above every limit gets the rule's last color. Units are not checked.
@@ -59,7 +57,7 @@ The `DETECTOR` fill SHALL be blue for temperature <= 15 and gray for temperature
 - **THEN** `DETECTOR` is gray
 
 ### Requirement: Unknown look of color rules
-When a color rule's value is unknown, its target elements SHALL be drawn with a gray fill, covered by purple diagonal hatching that follows the element's exact shape.
+When the value of a colour is unknown, its target element SHALL be drawn with a gray fill, covered by purple diagonal hatching that follows the element's exact shape, and nothing outside it. The detector has square corners.
 
 #### Scenario: Disconnected gauge
 - **WHEN** the chamber pressure channel disconnects while `MAXICHAMBER` is green
@@ -68,6 +66,10 @@ When a color rule's value is unknown, its target elements SHALL be drawn with a 
 #### Scenario: Recovery
 - **WHEN** the channel reconnects with pressure 3e-7
 - **THEN** the hatching is removed and `MAXICHAMBER` is green
+
+#### Scenario: Detector corners
+- **WHEN** the detector temperature channel is disconnected
+- **THEN** the hatching fills `DETECTOR` into its square corners, and no gray or blue of the drawing shows at its edges
 
 ### Requirement: State selection
 A state rule SHALL map each known value to one SVG asset, and have one asset for unknown values. Exactly one of its assets is shown at a time; the others are hidden. State rules do not use hatching.
@@ -114,15 +116,19 @@ The panel SHALL always draw the nominal beam path as a thin, dim, dashed line fr
 - **THEN** the solid beam ends at the valve with a stop mark, and only the dashed path is drawn behind it
 
 ### Requirement: Unknown states on the beam path
-A valve in an unknown state SHALL be drawn as letting the beam pass, because wrongly showing beam is the safer mistake. Behind a shutter in an unknown state, the beam SHALL be drawn as a stronger dashed line up to the diode, provided the beam reaches the shutter.
+A valve in an unknown state SHALL be drawn as letting the beam pass, because wrongly showing beam is the safer mistake. Behind the shutter, the beam SHALL be drawn as a stronger dashed line up to the diode when the valve or the shutter channel is disconnected. While the shutter is connected but INVALID, the beam behind it keeps its last drawing, and the shutter itself shows `SHUTTER_UNKNOWN`.
 
 #### Scenario: Valve unknown
-- **WHEN** the valve state is unknown and the shutter is closed
-- **THEN** the solid beam is drawn through the valve up to the shutter
+- **WHEN** the valve channel is disconnected and the shutter is closed
+- **THEN** the solid beam is drawn through the valve up to the shutter, and the beam behind the shutter is strongly dashed
 
 #### Scenario: Shutter unknown
-- **WHEN** the valve is open and the shutter state is unknown
+- **WHEN** the valve is open and the shutter channel is disconnected
 - **THEN** the beam is solid up to the shutter and strongly dashed from the shutter to the diode
+
+#### Scenario: Shutter invalid
+- **WHEN** the valve and the shutter are open and the shutter then reports INVALID quality
+- **THEN** only `SHUTTER_UNKNOWN` of the shutter drawings is visible, and the beam behind the shutter is still drawn as passing
 
 ### Requirement: Initial state
 At startup, before any value arrives, every rule SHALL show its unknown look, whatever visibility and colors the SVG file was saved with.
@@ -131,20 +137,9 @@ At startup, before any value arrives, every rule SHALL show its unknown look, wh
 - **WHEN** the SVG file was saved with `VALVE_OPEN` visible
 - **THEN** after startup only `VALVE_UNKNOWN` is visible until the valve channel sends a value
 
-### Requirement: Rule validation
-At startup, an element id declared by a rule that is not in the SVG, or a rule channel that is not in `extra_channels`, SHALL be a validation error that stops startup. It is reported together with the configuration errors.
+### Requirement: Colour and state channels
+The colours and states SHALL read the same configured signals as the value labels: the chamber colour the chamber pressure, the detector colour the detector temperature, and the valve, shutter and beam states the valve and shutter booleans.
 
-#### Scenario: Missing asset id
-- **WHEN** the SVG has no element with id `SHUTTER_UNKNOWN`
-- **THEN** startup fails with an error saying there is no SVG element with id `SHUTTER_UNKNOWN`
-
-#### Scenario: Missing extra channel
-- **WHEN** the shutter rule uses channel `shutter_open` and `extra_channels` has no `shutter_open`
-- **THEN** startup fails with an error naming `shutter_open`
-
-### Requirement: Repaint rate
-The panel SHALL redraw changed rule elements at most 10 times per second. The last value received in each period is the one shown.
-
-#### Scenario: Burst of updates
-- **WHEN** the chamber pressure sends 50 updates within 100 ms
-- **THEN** the SVG is redrawn at most once for them, showing the color for the last value
+#### Scenario: Channel from configuration
+- **WHEN** the configuration sets the signal `maxi_vac_pressure` to `tango://maxi-ctrl:10000/maxi/vac/gauge1/pressure`
+- **THEN** both the chamber pressure label and the `MAXICHAMBER` colour use that attribute

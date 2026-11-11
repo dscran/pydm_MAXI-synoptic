@@ -1,3 +1,35 @@
+[build-system]
+# 64 is the first version with editable installs after PEP 660
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maxi-synoptic"
+version = "0.1.0"
+description = "PyDM synoptic panel for the MAXI beamline"
+readme = "README.md"
+requires-python = ">=3.10"
+# No Qt binding: PyQt5 comes from conda-forge, and a pip PyQt5 next to it breaks the environment.
+# The Tango data plugin is only in the PyDM fork, which the README tells how to install.
+dependencies = ["pydm", "pytango"]
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-qt", "pytest-timeout"]
+
+[project.scripts]
+maxi-synoptic = "maxi_synoptic.cli:main"
+maxi-synoptic-sim = "maxi_synoptic.cli:sim_main"
+
+[tool.setuptools.package-data]
+# The drawing is installed as well, so that the tests can compare the panel with it
+maxi_synoptic = [
+    "resources/*.ui",
+    "resources/*.qss",
+    "resources/*.json",
+    "resources/*.svg",
+    "resources/assets/*",
+]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 timeout = 120

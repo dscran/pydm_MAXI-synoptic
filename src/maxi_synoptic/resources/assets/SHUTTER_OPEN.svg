@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" viewBox="1094 432 128 214" width="128" height="214">
+  <defs id="defs1" />
+  <g id="SHUTTER_OPEN" inkscape:label="SHUTTER_OPEN" style="">
+    <rect id="SHUTTER_OPEN_frame" x="1124" y="474" width="68" height="166" style="fill:#262b31;stroke:#f0c75e;stroke-width:4" />
+    <rect id="SHUTTER_OPEN_blade_top" x="1132" y="482" width="52" height="46" style="fill:#aab4bf;stroke:none" />
+    <rect id="SHUTTER_OPEN_blade_bottom" x="1132" y="586" width="52" height="46" style="fill:#aab4bf;stroke:none" />
+    <text id="SHUTTER_OPEN_word" xml:space="preserve" x="1158" y="462" style="font-family:sans-serif;font-size:22px;font-weight:bold;fill:#f0c75e;text-anchor:middle">OPEN</text>
+  </g>
+</svg>

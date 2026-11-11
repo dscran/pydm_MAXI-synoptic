@@ -1,0 +1,26 @@
+{
+  "beam_valve": {
+    "x": 1187,
+    "y": 545,
+    "width": 296,
+    "height": 14
+  },
+  "beam_shutter": {
+    "x": 546,
+    "y": 545,
+    "width": 655,
+    "height": 14
+  },
+  "valve": {
+    "x": 1310,
+    "y": 442,
+    "width": 196,
+    "height": 184
+  },
+  "shutter": {
+    "x": 1094,
+    "y": 432,
+    "width": 128,
+    "height": 214
+  }
+}

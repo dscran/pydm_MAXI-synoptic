@@ -1,0 +1,79 @@
+/* Style of the MAXI synoptic panel maxi_synoptic.ui. The `maxi-synoptic` command loads it.
+   The panel has a fixed size, so the sizes are in pixels.
+
+   PyDM sets the property alarmSeverity on every widget with a channel:
+   0 = OK, 1 = MINOR, 2 = MAJOR, 3 = INVALID, 4 = disconnected (also before the first value).
+   A value set with qproperty- is not undone when its selector stops matching, so every severity that
+   changes a property needs its own rule. */
+
+/* Around the drawing, when the window is larger than the panel */
+QWidget#MaxiSynoptic {
+    background: #1e2227;
+}
+
+/* Value labels. The slots in the drawing are dark and 56 px high. */
+PyDMLabel {
+    font-size: 30px;
+    color: #f2f4f7;
+    background: transparent;
+}
+PyDMLabel[alarmSensitiveBorder="true"][alarmSeverity="3"] {
+    color: #8e5ea2;
+    border: 2px solid #8e5ea2;
+}
+PyDMLabel[alarmSensitiveBorder="true"][alarmSeverity="4"] {
+    color: #6b7480;
+    border: 2px dashed #a3adb8;
+}
+
+/* Chamber and detector: their rules set the colour; an unknown value is gray with purple hatching.
+   When the value is known again, PyDM sets the brush back and the rule sets the colour. */
+PyDMDrawingCircle#chamber[alarmSeverity="3"],
+PyDMDrawingCircle#chamber[alarmSeverity="4"],
+PyDMDrawingRectangle#detector[alarmSeverity="3"],
+PyDMDrawingRectangle#detector[alarmSeverity="4"] {
+    qproperty-brush: qlineargradient(spread:repeat, x1:0, y1:0, x2:0.04, y2:0.04,
+        stop:0 #6b7480, stop:0.5 #6b7480, stop:0.51 #8e5ea2, stop:1 #8e5ea2);
+}
+
+/* Valve, shutter and beam: the UNKNOWN drawings while the value is unknown. The rules for severities
+   0 to 2 (a known value, also with ALARM or WARNING quality) repeat the imageFiles of the symbols in
+   maxi_synoptic.ui; tests/test_ui.py checks that they agree.
+   The beam behind the valve is drawn while the valve is unknown: wrongly showing beam is the safer
+   mistake. */
+PyDMSymbol#beam_valve[alarmSeverity="0"],
+PyDMSymbol#beam_valve[alarmSeverity="1"],
+PyDMSymbol#beam_valve[alarmSeverity="2"] {
+    qproperty-imageFiles: '{"0": "assets/BEAM_VALVE_CLOSED.svg", "1": "assets/BEAM_VALVE_OPEN.svg"}';
+}
+PyDMSymbol#beam_valve[alarmSeverity="3"],
+PyDMSymbol#beam_valve[alarmSeverity="4"] {
+    qproperty-imageFiles: '{"0": "assets/BEAM_VALVE_OPEN.svg", "1": "assets/BEAM_VALVE_OPEN.svg"}';
+}
+PyDMSymbol#beam_shutter[alarmSeverity="0"],
+PyDMSymbol#beam_shutter[alarmSeverity="1"],
+PyDMSymbol#beam_shutter[alarmSeverity="2"] {
+    qproperty-imageFiles: '{"0": "assets/beam_shutter_none.svg", "1": "assets/BEAM_SHUTTER_OPEN.svg", "2": "assets/BEAM_SHUTTER_CLOSED.svg"}';
+}
+PyDMSymbol#beam_shutter[alarmSeverity="3"],
+PyDMSymbol#beam_shutter[alarmSeverity="4"] {
+    qproperty-imageFiles: '{"0": "assets/BEAM_SHUTTER_UNKNOWN.svg", "1": "assets/BEAM_SHUTTER_UNKNOWN.svg", "2": "assets/BEAM_SHUTTER_UNKNOWN.svg"}';
+}
+PyDMSymbol#valve[alarmSeverity="0"],
+PyDMSymbol#valve[alarmSeverity="1"],
+PyDMSymbol#valve[alarmSeverity="2"] {
+    qproperty-imageFiles: '{"0": "assets/VALVE_CLOSED.svg", "1": "assets/VALVE_OPEN.svg"}';
+}
+PyDMSymbol#valve[alarmSeverity="3"],
+PyDMSymbol#valve[alarmSeverity="4"] {
+    qproperty-imageFiles: '{"0": "assets/VALVE_UNKNOWN.svg", "1": "assets/VALVE_UNKNOWN.svg"}';
+}
+PyDMSymbol#shutter[alarmSeverity="0"],
+PyDMSymbol#shutter[alarmSeverity="1"],
+PyDMSymbol#shutter[alarmSeverity="2"] {
+    qproperty-imageFiles: '{"0": "assets/SHUTTER_CLOSED.svg", "1": "assets/SHUTTER_OPEN.svg"}';
+}
+PyDMSymbol#shutter[alarmSeverity="3"],
+PyDMSymbol#shutter[alarmSeverity="4"] {
+    qproperty-imageFiles: '{"0": "assets/SHUTTER_UNKNOWN.svg", "1": "assets/SHUTTER_UNKNOWN.svg"}';
+}

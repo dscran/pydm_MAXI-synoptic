@@ -1,0 +1,78 @@
+# Spec Delta
+
+## MODIFIED Requirements
+
+### Requirement: SVG background
+The panel SHALL show the MAXI drawing at a fixed size of 1920x1080 pixels, unscaled. A larger window shows the panel in its top-left corner on the panel's background colour; a smaller window shows only part of the panel. The drawing comes from `MAXI_synoptic_v2.svg`.
+
+#### Scenario: Window with a different aspect ratio
+- **WHEN** the panel is shown in a 2560x1440 window
+- **THEN** the drawing is drawn at 1920x1080 in the top-left corner, not distorted and not scaled
+
+#### Scenario: Window smaller than the panel
+- **WHEN** the panel is shown in a 960x540 window
+- **THEN** the drawing and all values keep their size and position, and only the top-left part of the panel is visible
+
+### Requirement: Value overlays
+The panel SHALL show a read-only value label over each value slot of the drawing (each element whose id ends in `_value`, except `DATETIME_value`), connected to the channel of that signal. The label shows the Tango unit, uses the number format given for that slot, and shows the PyDM alarm border for the attribute quality.
+
+#### Scenario: Label placement
+- **WHEN** the panel runs at its fixed size
+- **THEN** the label of `MAXI_VAC_pressure_value` covers the rectangle of that slot in the drawing, and shows the chamber pressure with its unit in the format `%.2e`
+
+#### Scenario: Tango format used
+- **WHEN** a slot has no format of its own and the attribute's Tango format is `%.3f`
+- **THEN** the label shows the value with 3 decimal places
+
+#### Scenario: Disconnected value
+- **WHEN** the channel of a value label is disconnected
+- **THEN** the label shows PyDM's disconnected style: a dashed border, with the channel address as its text
+
+#### Scenario: Invalid value
+- **WHEN** the attribute of a value label has INVALID quality
+- **THEN** the label shows the INVALID alarm border and the INVALID text colour of the style sheet
+
+### Requirement: Plot overlays
+The panel SHALL show a time plot of the chamber, shutter-chamber and diffusion-pump pressures over the plot slots `MAXI_VAC_plot`, `SHUTTER_VAC_plot` and `DIFF_VAC_plot`. Each plot adds the latest value every second, even when the value has not changed, shows the last 600 s on a logarithmic y-axis fixed at 1e-9 to 1e3, and starts empty.
+
+#### Scenario: Slowly changing value
+- **WHEN** a plotted pressure does not change for 60 s
+- **THEN** the plot shows a flat line with about 60 new points over that time
+
+#### Scenario: Fixed y-axis
+- **WHEN** a plotted pressure is 1e-7
+- **THEN** the y-axis still shows 1e-9 to 1e3
+
+### Requirement: Value style sheet
+The font size and text colour of the value labels SHALL come from the Qt style sheet `maxi_synoptic.qss` installed with the panel, not from the desktop theme. The `maxi-synoptic` command applies this style sheet.
+
+#### Scenario: Font size from the style sheet
+- **WHEN** `maxi_synoptic.qss` sets `font-size: 20px` for `PyDMLabel`
+- **THEN** every value label shows its text 20 px high
+
+#### Scenario: Dark desktop theme
+- **WHEN** the desktop theme has light text and `maxi_synoptic.qss` sets a dark `color` for `PyDMLabel`
+- **THEN** the values are shown in the dark colour of the style sheet
+
+## ADDED Requirements
+
+### Requirement: Plot colours
+The time plots SHALL have the dark background of their slots and light axes and curves.
+
+#### Scenario: Dark slot
+- **WHEN** the panel runs
+- **THEN** each plot has the background `#15181c` and light axes and curve
+
+## REMOVED Requirements
+
+### Requirement: Plot colors follow the slot
+**Reason**: Plot colours are now fixed settings of the plots in the Designer file; there is no code that reads the slot colour.
+**Migration**: None needed; the plots keep the dark-slot look (see "Plot colours"). To change them, edit the plots in Qt Designer.
+
+### Requirement: Overlays follow transforms and resizing
+**Reason**: The widgets are placed absolutely in the Designer file, and the panel has a fixed size of 1920x1080.
+**Migration**: Run the panel in a 1920x1080 window. When a slot moves in the drawing, move its widget in Qt Designer as well.
+
+### Requirement: Local clock
+**Reason**: PyDM has no clock widget; the built-in workaround shows only UTC and only updates with data.
+**Migration**: Use the desktop clock. The slot `DATETIME_value` stays empty.

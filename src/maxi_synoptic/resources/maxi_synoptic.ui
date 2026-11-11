@@ -1,0 +1,936 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui version="4.0">
+ <class>MaxiSynoptic</class>
+ <widget class="QWidget" name="MaxiSynoptic">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MAXI synoptic</string>
+  </property>
+  <widget class="PyDMDrawingImage" name="background">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1920</width>
+     <height>1080</height>
+    </rect>
+   </property>
+   <property name="filename" stdset="0">
+    <string>assets/background.svg</string>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingCircle" name="chamber">
+   <property name="geometry">
+    <rect>
+     <x>495</x>
+     <y>389</y>
+     <width>326</width>
+     <height>326</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${maxi_vac_pressure}</string>
+   </property>
+   <property name="brush" stdset="0">
+    <brush brushstyle="SolidPattern">
+     <color alpha="255">
+      <red>107</red>
+      <green>116</green>
+      <blue>128</blue>
+     </color>
+    </brush>
+   </property>
+   <property name="penStyle" stdset="0">
+    <enum>Qt::SolidLine</enum>
+   </property>
+   <property name="penColor" stdset="0">
+    <color alpha="255">
+     <red>170</red>
+     <green>180</green>
+     <blue>191</blue>
+    </color>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>3.0</double>
+   </property>
+   <property name="rules" stdset="0">
+    <string>[{"name": "pressure bands", "property": "Set Brush Color", "initial_value": "", "expression": "QColor('#4fae7b') if ch[0] &lt;= 5e-6 else (QColor('#d6a544') if ch[0] &lt;= 700 else QColor('#6b7480'))", "channels": [{"channel": "${maxi_vac_pressure}", "trigger": true, "use_enum": false}], "notes": ""}]</string>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingRectangle" name="detector">
+   <property name="geometry">
+    <rect>
+     <x>81</x>
+     <y>449</y>
+     <width>242</width>
+     <height>206</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${detector_temp}</string>
+   </property>
+   <property name="brush" stdset="0">
+    <brush brushstyle="SolidPattern">
+     <color alpha="255">
+      <red>107</red>
+      <green>116</green>
+      <blue>128</blue>
+     </color>
+    </brush>
+   </property>
+   <property name="penStyle" stdset="0">
+    <enum>Qt::SolidLine</enum>
+   </property>
+   <property name="penColor" stdset="0">
+    <color alpha="255">
+     <red>170</red>
+     <green>180</green>
+     <blue>191</blue>
+    </color>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>3.0</double>
+   </property>
+   <property name="rules" stdset="0">
+    <string>[{"name": "cold", "property": "Set Brush Color", "initial_value": "", "expression": "QColor('#4b8fc4') if ch[0] &lt;= 15 else QColor('#6b7480')", "channels": [{"channel": "${detector_temp}", "trigger": true, "use_enum": false}], "notes": ""}]</string>
+   </property>
+  </widget>
+  <widget class="PyDMDrawingImage" name="foreground">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1920</width>
+     <height>1080</height>
+    </rect>
+   </property>
+   <property name="filename" stdset="0">
+    <string>assets/foreground.svg</string>
+   </property>
+  </widget>
+  <widget class="PyDMSymbol" name="valve">
+   <property name="geometry">
+    <rect>
+     <x>1310</x>
+     <y>442</y>
+     <width>196</width>
+     <height>184</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${valve_open}</string>
+   </property>
+   <property name="imageFiles" stdset="0">
+    <string>{"0": "assets/VALVE_CLOSED.svg", "1": "assets/VALVE_OPEN.svg"}</string>
+   </property>
+  </widget>
+  <widget class="PyDMSymbol" name="shutter">
+   <property name="geometry">
+    <rect>
+     <x>1094</x>
+     <y>432</y>
+     <width>128</width>
+     <height>214</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${shutter_open}</string>
+   </property>
+   <property name="imageFiles" stdset="0">
+    <string>{"0": "assets/SHUTTER_CLOSED.svg", "1": "assets/SHUTTER_OPEN.svg"}</string>
+   </property>
+  </widget>
+  <widget class="PyDMSymbol" name="beam_valve">
+   <property name="geometry">
+    <rect>
+     <x>1187</x>
+     <y>545</y>
+     <width>296</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${valve_open}</string>
+   </property>
+   <property name="imageFiles" stdset="0">
+    <string>{"0": "assets/BEAM_VALVE_CLOSED.svg", "1": "assets/BEAM_VALVE_OPEN.svg"}</string>
+   </property>
+  </widget>
+  <widget class="PyDMSymbol" name="beam_shutter">
+   <property name="geometry">
+    <rect>
+     <x>546</x>
+     <y>545</y>
+     <width>655</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>calc://beam_shutter?v=${valve_open_calc}&amp;s=${shutter_open_calc}&amp;expr=0%20if%20not%20v%20else%20%281%20if%20s%20else%202%29</string>
+   </property>
+   <property name="imageFiles" stdset="0">
+    <string>{"0": "assets/beam_shutter_none.svg", "1": "assets/BEAM_SHUTTER_OPEN.svg", "2": "assets/BEAM_SHUTTER_CLOSED.svg"}</string>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="DIODE_current_value">
+   <property name="geometry">
+    <rect>
+     <x>434</x>
+     <y>834</y>
+     <width>219</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${diode_current}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="displayFormat" stdset="0">
+    <enum>PyDMLabel::Exponential</enum>
+   </property>
+   <property name="precisionFromPV" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="precision" stdset="0">
+    <number>3</number>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="DIODE_amplification_value">
+   <property name="geometry">
+    <rect>
+     <x>663</x>
+     <y>834</y>
+     <width>219</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${diode_amplification}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="displayFormat" stdset="0">
+    <enum>PyDMLabel::Exponential</enum>
+   </property>
+   <property name="precisionFromPV" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="precision" stdset="0">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="DIODE_encoder_value">
+   <property name="geometry">
+    <rect>
+     <x>434</x>
+     <y>928</y>
+     <width>219</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${diode_encoder}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="MAXI_VAC_pressure_value">
+   <property name="geometry">
+    <rect>
+     <x>434</x>
+     <y>102</y>
+     <width>219</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${maxi_vac_pressure}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="displayFormat" stdset="0">
+    <enum>PyDMLabel::Exponential</enum>
+   </property>
+   <property name="precisionFromPV" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="precision" stdset="0">
+    <number>2</number>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="MAXI_VAC_roughing_pressure_value">
+   <property name="geometry">
+    <rect>
+     <x>663</x>
+     <y>102</y>
+     <width>219</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${maxi_vac_roughing_pressure}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="displayFormat" stdset="0">
+    <enum>PyDMLabel::Exponential</enum>
+   </property>
+   <property name="precisionFromPV" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="precision" stdset="0">
+    <number>2</number>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="SHUTTER_VAC_pressure_value">
+   <property name="geometry">
+    <rect>
+     <x>934</x>
+     <y>102</y>
+     <width>219</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${shutter_vac_pressure}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="displayFormat" stdset="0">
+    <enum>PyDMLabel::Exponential</enum>
+   </property>
+   <property name="precisionFromPV" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="precision" stdset="0">
+    <number>2</number>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="SHUTTER_VAC_roughing_pressure_value">
+   <property name="geometry">
+    <rect>
+     <x>1163</x>
+     <y>102</y>
+     <width>219</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${shutter_vac_roughing_pressure}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="displayFormat" stdset="0">
+    <enum>PyDMLabel::Exponential</enum>
+   </property>
+   <property name="precisionFromPV" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="precision" stdset="0">
+    <number>2</number>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="DIFF_VAC_pressure_value">
+   <property name="geometry">
+    <rect>
+     <x>1434</x>
+     <y>102</y>
+     <width>219</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${diff_vac_pressure}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="displayFormat" stdset="0">
+    <enum>PyDMLabel::Exponential</enum>
+   </property>
+   <property name="precisionFromPV" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="precision" stdset="0">
+    <number>2</number>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="DIFF_VAC_roughing_pressure_value">
+   <property name="geometry">
+    <rect>
+     <x>1663</x>
+     <y>102</y>
+     <width>219</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${diff_vac_roughing_pressure}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="displayFormat" stdset="0">
+    <enum>PyDMLabel::Exponential</enum>
+   </property>
+   <property name="precisionFromPV" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="precision" stdset="0">
+    <number>2</number>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="BEAMLINE_status_value">
+   <property name="geometry">
+    <rect>
+     <x>1434</x>
+     <y>834</y>
+     <width>219</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${beamline_status}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="BEAMLINE_energy_value">
+   <property name="geometry">
+    <rect>
+     <x>1663</x>
+     <y>834</y>
+     <width>219</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${beamline_energy}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="BEAMLINE_polarization_value">
+   <property name="geometry">
+    <rect>
+     <x>1434</x>
+     <y>928</y>
+     <width>219</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${beamline_polarization}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="BEAMLINE_exit_slit_value">
+   <property name="geometry">
+    <rect>
+     <x>1663</x>
+     <y>928</y>
+     <width>219</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${beamline_exit_slit}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="DETECTOR_status_value">
+   <property name="geometry">
+    <rect>
+     <x>38</x>
+     <y>102</y>
+     <width>344</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${detector_status}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="DETECTOR_temp_value">
+   <property name="geometry">
+    <rect>
+     <x>38</x>
+     <y>196</y>
+     <width>344</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${detector_temp}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="DETECTOR_temp_setpoint_value">
+   <property name="geometry">
+    <rect>
+     <x>38</x>
+     <y>290</y>
+     <width>344</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${detector_temp_setpoint}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="MAGNET_current_amplitude_value">
+   <property name="geometry">
+    <rect>
+     <x>38</x>
+     <y>834</y>
+     <width>344</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${magnet_current_amplitude}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="MAGNET_current_angle_value">
+   <property name="geometry">
+    <rect>
+     <x>38</x>
+     <y>928</y>
+     <width>344</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${magnet_current_angle}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="SHUTTER_PANEL_mode_value">
+   <property name="geometry">
+    <rect>
+     <x>934</x>
+     <y>834</y>
+     <width>448</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${shutter_panel_mode}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="PyDMLabel" name="SHUTTER_PANEL_status_value">
+   <property name="geometry">
+    <rect>
+     <x>934</x>
+     <y>928</y>
+     <width>448</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${shutter_panel_status}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="showUnits" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveBorder" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="alarmSensitiveContent" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="PyDMTimePlot" name="MAXI_VAC_plot">
+   <property name="geometry">
+    <rect>
+     <x>434</x>
+     <y>172</y>
+     <width>448</width>
+     <height>174</height>
+    </rect>
+   </property>
+   <property name="yAxes" stdset="0">
+    <stringlist>
+     <string>{"name": "Axis 1", "orientation": "left", "label": " ", "minRange": -9, "maxRange": 3, "autoRange": false, "logMode": true}</string>
+    </stringlist>
+   </property>
+   <property name="curves" stdset="0">
+    <stringlist>
+     <string>{"channel": "${maxi_vac_pressure}", "name": "pressure", "color": "#d3d9df", "lineStyle": 1, "lineWidth": 2, "symbol": null, "symbolSize": 10, "yAxisName": "Axis 1", "thresholdColor": "white"}</string>
+    </stringlist>
+   </property>
+   <property name="backgroundColor" stdset="0">
+    <color alpha="255">
+     <red>21</red>
+     <green>24</green>
+     <blue>28</blue>
+    </color>
+   </property>
+   <property name="axisColor" stdset="0">
+    <color alpha="255">
+     <red>211</red>
+     <green>217</green>
+     <blue>223</blue>
+    </color>
+   </property>
+   <property name="showLegend" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="updateMode" stdset="0">
+    <enum>PyDMTimePlot::AtFixedRate</enum>
+   </property>
+   <property name="updateInterval" stdset="0">
+    <double>1.0</double>
+   </property>
+   <property name="timeSpan" stdset="0">
+    <double>600.0</double>
+   </property>
+   <property name="maxRedrawRate" stdset="0">
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="PyDMTimePlot" name="SHUTTER_VAC_plot">
+   <property name="geometry">
+    <rect>
+     <x>934</x>
+     <y>172</y>
+     <width>448</width>
+     <height>174</height>
+    </rect>
+   </property>
+   <property name="yAxes" stdset="0">
+    <stringlist>
+     <string>{"name": "Axis 1", "orientation": "left", "label": " ", "minRange": -9, "maxRange": 3, "autoRange": false, "logMode": true}</string>
+    </stringlist>
+   </property>
+   <property name="curves" stdset="0">
+    <stringlist>
+     <string>{"channel": "${shutter_vac_pressure}", "name": "pressure", "color": "#d3d9df", "lineStyle": 1, "lineWidth": 2, "symbol": null, "symbolSize": 10, "yAxisName": "Axis 1", "thresholdColor": "white"}</string>
+    </stringlist>
+   </property>
+   <property name="backgroundColor" stdset="0">
+    <color alpha="255">
+     <red>21</red>
+     <green>24</green>
+     <blue>28</blue>
+    </color>
+   </property>
+   <property name="axisColor" stdset="0">
+    <color alpha="255">
+     <red>211</red>
+     <green>217</green>
+     <blue>223</blue>
+    </color>
+   </property>
+   <property name="showLegend" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="updateMode" stdset="0">
+    <enum>PyDMTimePlot::AtFixedRate</enum>
+   </property>
+   <property name="updateInterval" stdset="0">
+    <double>1.0</double>
+   </property>
+   <property name="timeSpan" stdset="0">
+    <double>600.0</double>
+   </property>
+   <property name="maxRedrawRate" stdset="0">
+    <number>1</number>
+   </property>
+  </widget>
+  <widget class="PyDMTimePlot" name="DIFF_VAC_plot">
+   <property name="geometry">
+    <rect>
+     <x>1434</x>
+     <y>172</y>
+     <width>448</width>
+     <height>174</height>
+    </rect>
+   </property>
+   <property name="yAxes" stdset="0">
+    <stringlist>
+     <string>{"name": "Axis 1", "orientation": "left", "label": " ", "minRange": -9, "maxRange": 3, "autoRange": false, "logMode": true}</string>
+    </stringlist>
+   </property>
+   <property name="curves" stdset="0">
+    <stringlist>
+     <string>{"channel": "${diff_vac_pressure}", "name": "pressure", "color": "#d3d9df", "lineStyle": 1, "lineWidth": 2, "symbol": null, "symbolSize": 10, "yAxisName": "Axis 1", "thresholdColor": "white"}</string>
+    </stringlist>
+   </property>
+   <property name="backgroundColor" stdset="0">
+    <color alpha="255">
+     <red>21</red>
+     <green>24</green>
+     <blue>28</blue>
+    </color>
+   </property>
+   <property name="axisColor" stdset="0">
+    <color alpha="255">
+     <red>211</red>
+     <green>217</green>
+     <blue>223</blue>
+    </color>
+   </property>
+   <property name="showLegend" stdset="0">
+    <bool>false</bool>
+   </property>
+   <property name="updateMode" stdset="0">
+    <enum>PyDMTimePlot::AtFixedRate</enum>
+   </property>
+   <property name="updateInterval" stdset="0">
+    <double>1.0</double>
+   </property>
+   <property name="timeSpan" stdset="0">
+    <double>600.0</double>
+   </property>
+   <property name="maxRedrawRate" stdset="0">
+    <number>1</number>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMDrawingCircle</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.drawing</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMDrawingImage</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.drawing</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMDrawingRectangle</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.drawing</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMLabel</class>
+   <extends>QLabel</extends>
+   <header>pydm.widgets.label</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMSymbol</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.symbol</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMTimePlot</class>
+   <extends>QGraphicsView</extends>
+   <header>pydm.widgets.timeplot</header>
+  </customwidget>
+ </customwidgets>
+ <resources />
+ <connections />
+</ui>
