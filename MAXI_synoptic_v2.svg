@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- MAXI synoptic, version 2. Background of the PyDM panel maxi_synoptic.py.
+     The panel finds elements by id; see "Editing the SVG" in README.md. -->
+
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 1920 1080"
+   version="1.1"
+   id="MAXI_synoptic_v2"
+   sodipodi:docname="MAXI_synoptic_v2.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.3470439"
+     inkscape:cx="1014.2809"
+     inkscape:cy="494.17379"
+     inkscape:window-width="1829"
+     inkscape:window-height="970"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer_hardware"
+     showguides="true" />
+  <g
+     id="layer_background"
+     inkscape:groupmode="layer"
+     inkscape:label="background">
+    <rect
+       id="BACKGROUND"
+       x="0"
+       y="0"
+       width="1920"
+       height="1080"
+       style="fill:#1e2227;stroke:none" />
+  </g>
+  <g
+     id="layer_hardware"
+     inkscape:groupmode="layer"
+     inkscape:label="hardware">
+    <rect
+       id="PIPE_detector"
+       x="318"
+       y="506"
+       width="187.7926"
+       height="92"
+       style="fill:#48515c;stroke:#aab4bf;stroke-width:2.5"
+       rx="0"
+       ry="0" />
+    <rect
+       id="BELLOW"
+       inkscape:label="BELLOW"
+       x="810.53064"
+       y="506"
+       width="233.46939"
+       height="92"
+       style="fill:#48515c;stroke:#aab4bf;stroke-width:2.5" />
+    <path
+       id="BELLOW_rib0"
+       d="M 850,497 V 607"
+       style="fill:none;stroke:#aab4bf;stroke-width:5;stroke-linecap:round" />
+    <path
+       id="BELLOW_rib1"
+       d="M 870,497 V 607"
+       style="fill:none;stroke:#aab4bf;stroke-width:5;stroke-linecap:round" />
+    <path
+       id="BELLOW_rib2"
+       d="M 890,497 V 607"
+       style="fill:none;stroke:#aab4bf;stroke-width:5;stroke-linecap:round" />
+    <path
+       id="BELLOW_rib3"
+       d="M 910,497 V 607"
+       style="fill:none;stroke:#aab4bf;stroke-width:5;stroke-linecap:round" />
+    <path
+       id="BELLOW_rib4"
+       d="M 930,497 V 607"
+       style="fill:none;stroke:#aab4bf;stroke-width:5;stroke-linecap:round" />
+    <path
+       id="BELLOW_rib5"
+       d="M 950,497 V 607"
+       style="fill:none;stroke:#aab4bf;stroke-width:5;stroke-linecap:round" />
+    <path
+       id="BELLOW_rib6"
+       d="M 970,497 V 607"
+       style="fill:none;stroke:#aab4bf;stroke-width:5;stroke-linecap:round" />
+    <path
+       id="BELLOW_rib7"
+       d="M 990,497 V 607"
+       style="fill:none;stroke:#aab4bf;stroke-width:5;stroke-linecap:round" />
+    <path
+       id="BELLOW_rib8"
+       d="M 1010,497 V 607"
+       style="fill:none;stroke:#aab4bf;stroke-width:5;stroke-linecap:round" />
+    <rect
+       id="PIPE_valve"
+       x="1272"
+       y="506"
+       width="272"
+       height="92"
+       style="fill:#48515c;stroke:#aab4bf;stroke-width:2.5" />
+    <rect
+       id="BEAMLINE"
+       inkscape:label="BEAMLINE"
+       x="1772"
+       y="506"
+       width="123.5173"
+       height="92"
+       style="fill:#48515c;stroke:#aab4bf;stroke-width:2.5" />
+    <rect
+       id="SHUTTERCHAMBER"
+       inkscape:label="SHUTTERCHAMBER"
+       x="1040"
+       y="434"
+       width="236"
+       height="236"
+       rx="10"
+       style="fill:#48515c;stroke:#aab4bf;stroke-width:2.5" />
+    <rect
+       id="DIFFPUMP"
+       inkscape:label="DIFFPUMP"
+       x="1540"
+       y="434"
+       width="236"
+       height="236"
+       rx="10"
+       style="fill:#48515c;stroke:#aab4bf;stroke-width:2.5" />
+    <circle
+       id="MAXICHAMBER"
+       inkscape:label="MAXICHAMBER"
+       cx="658"
+       cy="552"
+       r="160"
+       style="fill:#6b7480;stroke:#aab4bf;stroke-width:3" />
+    <rect
+       id="DETECTOR"
+       inkscape:label="DETECTOR"
+       x="84"
+       y="452"
+       width="236"
+       height="200"
+       rx="10"
+       style="fill:#6b7480;stroke:#aab4bf;stroke-width:3" />
+    <path
+       id="BEAM_axis"
+       d="M 1894.3326,552 H 320"
+       style="fill:none;stroke:#f0c75e;stroke-width:2;stroke-dasharray:10, 8;stroke-opacity:0.55"
+       sodipodi:nodetypes="cc" />
+    <path
+       id="BEAM_arrow"
+       d="m 1874,530 -26,22 26,22"
+       style="fill:none;stroke:#f0c75e;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.9" />
+    <path
+       id="DIODE_BS"
+       inkscape:label="DIODE_BS"
+       d="M 548,512 V 592"
+       style="fill:none;stroke:#262b31;stroke-width:9;stroke-linecap:round" />
+    <text
+       id="NAME_detector"
+       xml:space="preserve"
+       x="202"
+       y="684"
+       style="font-family:sans-serif;font-size:20px;font-weight:normal;fill:#7f8a96;text-anchor:middle">Detector</text>
+    <text
+       id="NAME_chamber"
+       xml:space="preserve"
+       x="658"
+       y="740"
+       style="font-family:sans-serif;font-size:20px;font-weight:normal;fill:#7f8a96;text-anchor:middle">MAXI chamber</text>
+    <text
+       id="NAME_shutterchamber"
+       xml:space="preserve"
+       x="1158"
+       y="702"
+       style="font-family:sans-serif;font-size:20px;font-weight:normal;fill:#7f8a96;text-anchor:middle">Shutter</text>
+    <text
+       id="NAME_valve"
+       xml:space="preserve"
+       x="1408"
+       y="702"
+       style="font-family:sans-serif;font-size:20px;font-weight:normal;fill:#7f8a96;text-anchor:middle">Valve</text>
+    <text
+       id="NAME_diffpump"
+       xml:space="preserve"
+       x="1658"
+       y="702"
+       style="font-family:sans-serif;font-size:20px;font-weight:normal;fill:#7f8a96;text-anchor:middle">Diff. pump</text>
+    <text
+       id="NAME_beamline"
+       xml:space="preserve"
+       x="1846"
+       y="636"
+       style="font-family:sans-serif;font-size:20px;font-weight:normal;fill:#7f8a96;text-anchor:middle">Beam</text>
+  </g>
+  <g
+     id="layer_magnets"
+     inkscape:groupmode="layer"
+     inkscape:label="magnets">
+    <path
+       id="MAG1"
+       inkscape:label="MAG1"
+       d="M 50,-24 L 140,-24 L 140,24 L 50,24 L 32,0 Z"
+       transform="translate(658,552) rotate(45)"
+       style="fill:#262b31;stroke:#aab4bf;stroke-width:2.5;stroke-linejoin:round" />
+    <path
+       id="MAG2"
+       inkscape:label="MAG2"
+       d="M 50,-24 L 140,-24 L 140,24 L 50,24 L 32,0 Z"
+       transform="translate(658,552) rotate(135)"
+       style="fill:#262b31;stroke:#aab4bf;stroke-width:2.5;stroke-linejoin:round" />
+    <path
+       id="MAG3"
+       inkscape:label="MAG3"
+       d="M 50,-24 L 140,-24 L 140,24 L 50,24 L 32,0 Z"
+       transform="translate(658,552) rotate(225)"
+       style="fill:#262b31;stroke:#aab4bf;stroke-width:2.5;stroke-linejoin:round" />
+    <path
+       id="MAG4"
+       inkscape:label="MAG4"
+       d="M 50,-24 L 140,-24 L 140,24 L 50,24 L 32,0 Z"
+       transform="translate(658,552) rotate(315)"
+       style="fill:#262b31;stroke:#aab4bf;stroke-width:2.5;stroke-linejoin:round" />
+  </g>
+  <g
+     id="layer_panels"
+     inkscape:groupmode="layer"
+     inkscape:label="panels">
+    <g
+       id="DETECTOR_panel"
+       inkscape:label="DETECTOR_panel">
+      <rect
+         id="DETECTOR_panel_bg"
+         x="24"
+         y="24"
+         width="372"
+         height="336"
+         rx="12"
+         style="fill:#2a3038;stroke:#3d4651;stroke-width:1.5" />
+      <text
+         id="DETECTOR_title"
+         xml:space="preserve"
+         x="40"
+         y="60"
+         style="font-family:sans-serif;font-size:25px;font-weight:bold;fill:#e9ecef;text-anchor:start">Detector</text>
+      <text
+         id="DETECTOR_status_label"
+         xml:space="preserve"
+         x="40"
+         y="95"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Status</text>
+      <rect
+         id="DETECTOR_status_value"
+         x="38"
+         y="102"
+         width="344"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <text
+         id="DETECTOR_temp_label"
+         xml:space="preserve"
+         x="40"
+         y="189"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Temperature</text>
+      <rect
+         id="DETECTOR_temp_value"
+         x="38"
+         y="196"
+         width="344"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <text
+         id="DETECTOR_temp_setpoint_label"
+         xml:space="preserve"
+         x="40"
+         y="283"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Temperature setpoint</text>
+      <rect
+         id="DETECTOR_temp_setpoint_value"
+         x="38"
+         y="290"
+         width="344"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+    </g>
+    <g
+       id="MAXI_VAC_panel"
+       inkscape:label="MAXI_VAC_panel">
+      <rect
+         id="MAXI_VAC_panel_bg"
+         x="420"
+         y="24"
+         width="476"
+         height="336"
+         rx="12"
+         style="fill:#2a3038;stroke:#3d4651;stroke-width:1.5" />
+      <text
+         id="MAXI_VAC_title"
+         xml:space="preserve"
+         x="436"
+         y="60"
+         style="font-family:sans-serif;font-size:25px;font-weight:bold;fill:#e9ecef;text-anchor:start">MAXI vacuum</text>
+      <text
+         id="MAXI_VAC_pressure_label"
+         xml:space="preserve"
+         x="436.0"
+         y="95"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Pressure</text>
+      <rect
+         id="MAXI_VAC_pressure_value"
+         x="434.0"
+         y="102"
+         width="219.0"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <text
+         id="MAXI_VAC_roughing_pressure_label"
+         xml:space="preserve"
+         x="665.0"
+         y="95"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Roughing pressure</text>
+      <rect
+         id="MAXI_VAC_roughing_pressure_value"
+         x="663.0"
+         y="102"
+         width="219.0"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <rect
+         id="MAXI_VAC_plot"
+         x="434"
+         y="172"
+         width="448"
+         height="174"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+    </g>
+    <g
+       id="SHUTTER_VAC_panel"
+       inkscape:label="SHUTTER_VAC_panel">
+      <rect
+         id="SHUTTER_VAC_panel_bg"
+         x="920"
+         y="24"
+         width="476"
+         height="336"
+         rx="12"
+         style="fill:#2a3038;stroke:#3d4651;stroke-width:1.5" />
+      <text
+         id="SHUTTER_VAC_title"
+         xml:space="preserve"
+         x="936"
+         y="60"
+         style="font-family:sans-serif;font-size:25px;font-weight:bold;fill:#e9ecef;text-anchor:start">Shutter vacuum</text>
+      <text
+         id="SHUTTER_VAC_pressure_label"
+         xml:space="preserve"
+         x="936.0"
+         y="95"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Pressure</text>
+      <rect
+         id="SHUTTER_VAC_pressure_value"
+         x="934.0"
+         y="102"
+         width="219.0"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <text
+         id="SHUTTER_VAC_roughing_pressure_label"
+         xml:space="preserve"
+         x="1165.0"
+         y="95"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Roughing pressure</text>
+      <rect
+         id="SHUTTER_VAC_roughing_pressure_value"
+         x="1163.0"
+         y="102"
+         width="219.0"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <rect
+         id="SHUTTER_VAC_plot"
+         x="934"
+         y="172"
+         width="448"
+         height="174"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+    </g>
+    <g
+       id="DIFF_VAC_panel"
+       inkscape:label="DIFF_VAC_panel">
+      <rect
+         id="DIFF_VAC_panel_bg"
+         x="1420"
+         y="24"
+         width="476"
+         height="336"
+         rx="12"
+         style="fill:#2a3038;stroke:#3d4651;stroke-width:1.5" />
+      <text
+         id="DIFF_VAC_title"
+         xml:space="preserve"
+         x="1436"
+         y="60"
+         style="font-family:sans-serif;font-size:25px;font-weight:bold;fill:#e9ecef;text-anchor:start">Diff. pump vacuum</text>
+      <text
+         id="DIFF_VAC_pressure_label"
+         xml:space="preserve"
+         x="1436.0"
+         y="95"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Pressure</text>
+      <rect
+         id="DIFF_VAC_pressure_value"
+         x="1434.0"
+         y="102"
+         width="219.0"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <text
+         id="DIFF_VAC_roughing_pressure_label"
+         xml:space="preserve"
+         x="1665.0"
+         y="95"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Roughing pressure</text>
+      <rect
+         id="DIFF_VAC_roughing_pressure_value"
+         x="1663.0"
+         y="102"
+         width="219.0"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <rect
+         id="DIFF_VAC_plot"
+         x="1434"
+         y="172"
+         width="448"
+         height="174"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+    </g>
+    <g
+       id="MAGNET_panel"
+       inkscape:label="MAGNET_panel">
+      <rect
+         id="MAGNET_panel_bg"
+         x="24"
+         y="756"
+         width="372"
+         height="244"
+         rx="12"
+         style="fill:#2a3038;stroke:#3d4651;stroke-width:1.5" />
+      <text
+         id="MAGNET_title"
+         xml:space="preserve"
+         x="40"
+         y="792"
+         style="font-family:sans-serif;font-size:25px;font-weight:bold;fill:#e9ecef;text-anchor:start">Magnet</text>
+      <text
+         id="MAGNET_current_amplitude_label"
+         xml:space="preserve"
+         x="40"
+         y="827"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Current amplitude</text>
+      <rect
+         id="MAGNET_current_amplitude_value"
+         x="38"
+         y="834"
+         width="344"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <text
+         id="MAGNET_current_angle_label"
+         xml:space="preserve"
+         x="40"
+         y="921"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Current angle</text>
+      <rect
+         id="MAGNET_current_angle_value"
+         x="38"
+         y="928"
+         width="344"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+    </g>
+    <g
+       id="DIODE_panel"
+       inkscape:label="DIODE_panel">
+      <rect
+         id="DIODE_panel_bg"
+         x="420"
+         y="756"
+         width="476"
+         height="244"
+         rx="12"
+         style="fill:#2a3038;stroke:#3d4651;stroke-width:1.5" />
+      <text
+         id="DIODE_title"
+         xml:space="preserve"
+         x="436"
+         y="792"
+         style="font-family:sans-serif;font-size:25px;font-weight:bold;fill:#e9ecef;text-anchor:start">Diode</text>
+      <text
+         id="DIODE_current_label"
+         xml:space="preserve"
+         x="436.0"
+         y="827"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Current</text>
+      <rect
+         id="DIODE_current_value"
+         x="434.0"
+         y="834"
+         width="219.0"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <text
+         id="DIODE_amplification_label"
+         xml:space="preserve"
+         x="665.0"
+         y="827"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Amplification</text>
+      <rect
+         id="DIODE_amplification_value"
+         x="663.0"
+         y="834"
+         width="219.0"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <text
+         id="DIODE_encoder_label"
+         xml:space="preserve"
+         x="436.0"
+         y="921"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Encoder</text>
+      <rect
+         id="DIODE_encoder_value"
+         x="434.0"
+         y="928"
+         width="219.0"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+    </g>
+    <g
+       id="SHUTTER_PANEL_panel"
+       inkscape:label="SHUTTER_PANEL_panel">
+      <rect
+         id="SHUTTER_PANEL_panel_bg"
+         x="920"
+         y="756"
+         width="476"
+         height="244"
+         rx="12"
+         style="fill:#2a3038;stroke:#3d4651;stroke-width:1.5" />
+      <text
+         id="SHUTTER_PANEL_title"
+         xml:space="preserve"
+         x="936"
+         y="792"
+         style="font-family:sans-serif;font-size:25px;font-weight:bold;fill:#e9ecef;text-anchor:start">Shutter</text>
+      <text
+         id="SHUTTER_PANEL_mode_label"
+         xml:space="preserve"
+         x="936"
+         y="827"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Mode</text>
+      <rect
+         id="SHUTTER_PANEL_mode_value"
+         x="934"
+         y="834"
+         width="448"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <text
+         id="SHUTTER_PANEL_status_label"
+         xml:space="preserve"
+         x="936"
+         y="921"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Status</text>
+      <rect
+         id="SHUTTER_PANEL_status_value"
+         x="934"
+         y="928"
+         width="448"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+    </g>
+    <g
+       id="BEAMLINE_panel"
+       inkscape:label="BEAMLINE_panel">
+      <rect
+         id="BEAMLINE_panel_bg"
+         x="1420"
+         y="756"
+         width="476"
+         height="244"
+         rx="12"
+         style="fill:#2a3038;stroke:#3d4651;stroke-width:1.5" />
+      <text
+         id="BEAMLINE_title"
+         xml:space="preserve"
+         x="1436"
+         y="792"
+         style="font-family:sans-serif;font-size:25px;font-weight:bold;fill:#e9ecef;text-anchor:start">Beamline</text>
+      <text
+         id="BEAMLINE_status_label"
+         xml:space="preserve"
+         x="1436.0"
+         y="827"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Status</text>
+      <rect
+         id="BEAMLINE_status_value"
+         x="1434.0"
+         y="834"
+         width="219.0"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <text
+         id="BEAMLINE_energy_label"
+         xml:space="preserve"
+         x="1665.0"
+         y="827"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Energy</text>
+      <rect
+         id="BEAMLINE_energy_value"
+         x="1663.0"
+         y="834"
+         width="219.0"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <text
+         id="BEAMLINE_polarization_label"
+         xml:space="preserve"
+         x="1436.0"
+         y="921"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Polarization</text>
+      <rect
+         id="BEAMLINE_polarization_value"
+         x="1434.0"
+         y="928"
+         width="219.0"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <text
+         id="BEAMLINE_exit_slit_label"
+         xml:space="preserve"
+         x="1665.0"
+         y="921"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Exit slit</text>
+      <rect
+         id="BEAMLINE_exit_slit_value"
+         x="1663.0"
+         y="928"
+         width="219.0"
+         height="56"
+         rx="6"
+         style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+    </g>
+    <rect
+       id="DATETIME_value"
+       inkscape:label="date_time"
+       x="24"
+       y="1014"
+       width="372"
+       height="42"
+       rx="6"
+       style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+    <g
+       id="LEGEND"
+       inkscape:label="legend">
+      <text
+         id="LEGEND_text0"
+         xml:space="preserve"
+         x="436"
+         y="1042"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#e9ecef;text-anchor:start">Chamber</text>
+      <rect
+         id="LEGEND_swatch1"
+         x="530.8"
+         y="1025"
+         width="20"
+         height="20"
+         rx="3"
+         style="fill:#4fae7b;stroke:#aab4bf;stroke-width:1" />
+      <text
+         id="LEGEND_text1"
+         xml:space="preserve"
+         x="558.8"
+         y="1042"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">≤ 5e-6 mbar</text>
+      <rect
+         id="LEGEND_swatch2"
+         x="695.1999999999999"
+         y="1025"
+         width="20"
+         height="20"
+         rx="3"
+         style="fill:#d6a544;stroke:#aab4bf;stroke-width:1" />
+      <text
+         id="LEGEND_text2"
+         xml:space="preserve"
+         x="723.1999999999999"
+         y="1042"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">≤ 700 mbar</text>
+      <rect
+         id="LEGEND_swatch3"
+         x="849.1999999999999"
+         y="1025"
+         width="20"
+         height="20"
+         rx="3"
+         style="fill:#6b7480;stroke:#aab4bf;stroke-width:1" />
+      <text
+         id="LEGEND_text3"
+         xml:space="preserve"
+         x="877.1999999999999"
+         y="1042"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">vented</text>
+      <text
+         id="LEGEND_text5"
+         xml:space="preserve"
+         x="1005.5999999999999"
+         y="1042"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#e9ecef;text-anchor:start">Detector</text>
+      <rect
+         id="LEGEND_swatch6"
+         x="1110.8"
+         y="1025"
+         width="20"
+         height="20"
+         rx="3"
+         style="fill:#4b8fc4;stroke:#aab4bf;stroke-width:1" />
+      <text
+         id="LEGEND_text6"
+         xml:space="preserve"
+         x="1138.8"
+         y="1042"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">≤ 15 °C</text>
+      <rect
+         id="LEGEND_swatch7"
+         x="1233.6"
+         y="1025"
+         width="20"
+         height="20"
+         rx="3"
+         style="fill:#6b7480;stroke:#aab4bf;stroke-width:1" />
+      <text
+         id="LEGEND_text7"
+         xml:space="preserve"
+         x="1261.6"
+         y="1042"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">warm</text>
+      <text
+         id="LEGEND_text9"
+         xml:space="preserve"
+         x="1369.1999999999998"
+         y="1042"
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#e9ecef;text-anchor:start">Hatched or “?”: value unknown</text>
+    </g>
+  </g>
+  <g
+     id="layer_states"
+     inkscape:groupmode="layer"
+     inkscape:label="states">
+    <g
+       id="VALVE_UNKNOWN"
+       inkscape:label="VALVE_UNKNOWN"
+       style="display:inline">
+      <rect
+         id="VALVE_UNKNOWN_body"
+         x="1340"
+         y="484"
+         width="136"
+         height="136"
+         rx="8"
+         style="fill:#6b7480;stroke:#aab4bf;stroke-width:3" />
+      <text
+         id="VALVE_UNKNOWN_mark"
+         xml:space="preserve"
+         x="1408.0"
+         y="574"
+         style="font-family:sans-serif;font-size:64px;font-weight:bold;fill:#262b31;text-anchor:middle">?</text>
+      <text
+         id="VALVE_UNKNOWN_word"
+         xml:space="preserve"
+         x="1408.0"
+         y="470"
+         style="font-family:sans-serif;font-size:22px;font-weight:bold;fill:#a3adb8;text-anchor:middle">?</text>
+    </g>
+    <g
+       id="VALVE_OPEN"
+       inkscape:label="VALVE_OPEN"
+       style="display:none">
+      <rect
+         id="VALVE_OPEN_body"
+         x="1340"
+         y="484"
+         width="136"
+         height="136"
+         rx="8"
+         style="fill:#4fae7b;stroke:#aab4bf;stroke-width:3" />
+      <rect
+         id="VALVE_OPEN_gate_top"
+         x="1378"
+         y="487"
+         width="60"
+         height="30"
+         style="fill:#262b31;stroke:none" />
+      <rect
+         id="VALVE_OPEN_gate_bottom"
+         x="1378"
+         y="587"
+         width="60"
+         height="30"
+         style="fill:#262b31;stroke:none" />
+      <text
+         id="VALVE_OPEN_word"
+         xml:space="preserve"
+         x="1408.0"
+         y="470"
+         style="font-family:sans-serif;font-size:22px;font-weight:bold;fill:#4fae7b;text-anchor:middle">OPEN</text>
+    </g>
+    <g
+       id="VALVE_CLOSED"
+       inkscape:label="VALVE_CLOSED"
+       style="display:none">
+      <rect
+         id="VALVE_CLOSED_body"
+         x="1340"
+         y="484"
+         width="136"
+         height="136"
+         rx="8"
+         style="fill:#cf5b5b;stroke:#aab4bf;stroke-width:3" />
+      <rect
+         id="VALVE_CLOSED_gate"
+         x="1378"
+         y="487"
+         width="60"
+         height="130"
+         style="fill:#262b31;stroke:none" />
+      <text
+         id="VALVE_CLOSED_word"
+         xml:space="preserve"
+         x="1408.0"
+         y="470"
+         style="font-family:sans-serif;font-size:22px;font-weight:bold;fill:#cf5b5b;text-anchor:middle">CLOSED</text>
+    </g>
+    <g
+       id="SHUTTER_UNKNOWN"
+       inkscape:label="SHUTTER_UNKNOWN"
+       style="display:inline">
+      <rect
+         id="SHUTTER_UNKNOWN_frame"
+         x="1124"
+         y="474"
+         width="68"
+         height="166"
+         rx="6"
+         style="fill:#262b31;stroke:#6b7480;stroke-width:4" />
+      <text
+         id="SHUTTER_UNKNOWN_mark"
+         xml:space="preserve"
+         x="1158"
+         y="580"
+         style="font-family:sans-serif;font-size:64px;font-weight:bold;fill:#6b7480;text-anchor:middle">?</text>
+      <text
+         id="SHUTTER_UNKNOWN_word"
+         xml:space="preserve"
+         x="1158"
+         y="462"
+         style="font-family:sans-serif;font-size:22px;font-weight:bold;fill:#a3adb8;text-anchor:middle">?</text>
+    </g>
+    <g
+       id="SHUTTER_OPEN"
+       inkscape:label="SHUTTER_OPEN"
+       style="display:none">
+      <rect
+         id="SHUTTER_OPEN_frame"
+         x="1124"
+         y="474"
+         width="68"
+         height="166"
+         rx="6"
+         style="fill:#262b31;stroke:#f0c75e;stroke-width:4" />
+      <rect
+         id="SHUTTER_OPEN_blade_top"
+         x="1132"
+         y="482"
+         width="52"
+         height="46"
+         rx="3"
+         style="fill:#aab4bf;stroke:none" />
+      <rect
+         id="SHUTTER_OPEN_blade_bottom"
+         x="1132"
+         y="586"
+         width="52"
+         height="46"
+         rx="3"
+         style="fill:#aab4bf;stroke:none" />
+      <path
+         id="SHUTTER_OPEN_beam"
+         d="M 1272,552 H 1044"
+         style="fill:none;stroke:#f0c75e;stroke-width:8;stroke-linecap:round" />
+      <text
+         id="SHUTTER_OPEN_word"
+         xml:space="preserve"
+         x="1158"
+         y="462"
+         style="font-family:sans-serif;font-size:22px;font-weight:bold;fill:#f0c75e;text-anchor:middle">OPEN</text>
+    </g>
+    <g
+       id="SHUTTER_CLOSED"
+       inkscape:label="SHUTTER_CLOSED"
+       style="display:none">
+      <rect
+         id="SHUTTER_CLOSED_frame"
+         x="1124"
+         y="474"
+         width="68"
+         height="166"
+         rx="6"
+         style="fill:#262b31;stroke:#4b8fc4;stroke-width:4" />
+      <path
+         id="SHUTTER_CLOSED_beam"
+         d="M 1272,552 H 1198"
+         style="fill:none;stroke:#f0c75e;stroke-width:8;stroke-linecap:round" />
+      <rect
+         id="SHUTTER_CLOSED_blade"
+         x="1132"
+         y="482"
+         width="52"
+         height="150"
+         rx="3"
+         style="fill:#4b8fc4;stroke:none" />
+      <text
+         id="SHUTTER_CLOSED_word"
+         xml:space="preserve"
+         x="1158"
+         y="462"
+         style="font-family:sans-serif;font-size:22px;font-weight:bold;fill:#4b8fc4;text-anchor:middle">CLOSED</text>
+    </g>
+  </g>
+</svg>

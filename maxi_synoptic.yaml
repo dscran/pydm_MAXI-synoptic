@@ -1,0 +1,117 @@
+# Configuration of the MAXI synoptic panel (maxi_synoptic.py).
+#
+# !!! PLACEHOLDER DEVICE NAMES !!!
+# Every Tango name below (maxi/...) is a placeholder until the real device and attribute names are
+# known. The panel starts with them, but shows disconnected values and "unknown" colors and states.
+#
+# Font size and color of the values are in the style sheet maxi_synoptic.qss.
+#
+# A Tango address is <device>/<attribute>. It gets tango:// and defaults.tango_host put in front.
+# A full address is used as it is: tango://host:10000/a/b/c/attribute
+
+defaults:
+  # Tango database for all addresses that are not full tango:// addresses.
+  # Remove it to use the TANGO_HOST environment variable.
+  tango_host: maxi-ctrl:10000        # PLACEHOLDER
+  # How often (in seconds) to read attributes that send no change events.
+  # The environment variable PYDM_TANGO_POLL_PERIOD (in milliseconds) wins over this.
+  tango_poll_period: 1.0
+  # How often (per second, whole number) a plot is drawn again at most. Remove it to use PyDM's
+  # default of 1. A plot with a refresh_period below 1 s needs a higher rate to show every point.
+  max_redraw_rate: 1
+
+# Value labels. Key: id of the SVG element that the label covers.
+#   source: Tango address of the attribute (required)
+#   format: printf format in quotes, e.g. "%.2e" (optional). It overrides the format of the Tango
+#           attribute. Without it, the Tango format gives the number of decimals.
+values:
+  DIODE_current_value:
+    source: maxi/diode/1/current                      # PLACEHOLDER
+    format: "%.3e"
+  DIODE_amplification_value:
+    source: maxi/diode/1/amplification                # PLACEHOLDER
+    format: "%.0e"
+  DIODE_encoder_value:
+    source: maxi/diode/1/encoder                      # PLACEHOLDER
+
+  MAXI_VAC_pressure_value:
+    source: maxi/vac/chamber_gauge/pressure           # PLACEHOLDER
+    format: "%.2e"
+  MAXI_VAC_roughing_pressure_value:
+    source: maxi/vac/chamber_roughing_gauge/pressure  # PLACEHOLDER
+    format: "%.2e"
+
+  SHUTTER_VAC_pressure_value:
+    source: maxi/vac/shutter_gauge/pressure           # PLACEHOLDER
+    format: "%.2e"
+  SHUTTER_VAC_roughing_pressure_value:
+    source: maxi/vac/shutter_roughing_gauge/pressure  # PLACEHOLDER
+    format: "%.2e"
+
+  DIFF_VAC_pressure_value:
+    source: maxi/vac/diff_gauge/pressure              # PLACEHOLDER
+    format: "%.2e"
+  DIFF_VAC_roughing_pressure_value:
+    source: maxi/vac/diff_roughing_gauge/pressure     # PLACEHOLDER
+    format: "%.2e"
+
+  BEAMLINE_status_value:
+    source: maxi/beamline/1/status_text               # PLACEHOLDER
+  BEAMLINE_energy_value:
+    source: maxi/beamline/1/energy                    # PLACEHOLDER
+  BEAMLINE_polarization_value:
+    source: maxi/beamline/1/polarization              # PLACEHOLDER
+  BEAMLINE_exit_slit_value:
+    source: maxi/beamline/1/exit_slit                 # PLACEHOLDER
+
+  DETECTOR_status_value:
+    source: maxi/detector/1/status_text               # PLACEHOLDER
+  DETECTOR_temp_value:
+    source: maxi/detector/1/temperature               # PLACEHOLDER
+  DETECTOR_temp_setpoint_value:
+    source: maxi/detector/1/temperature_setpoint      # PLACEHOLDER
+
+  MAGNET_current_amplitude_value:
+    source: maxi/magnet/1/current_amplitude           # PLACEHOLDER
+  MAGNET_current_angle_value:
+    source: maxi/magnet/1/current_angle               # PLACEHOLDER
+
+  SHUTTER_PANEL_mode_value:
+    source: maxi/shutter/1/mode                       # PLACEHOLDER
+  SHUTTER_PANEL_status_value:
+    source: maxi/shutter/1/status_text                # PLACEHOLDER
+
+# Time plots. Key: id of the SVG element that the plot covers.
+#   source:         Tango address of the attribute (required)
+#   refresh_period: seconds between two points (required, > 0). A point is added every period,
+#                   also when the value did not change.
+#   log_y:          true for a logarithmic y-axis (optional, default false)
+#   time_span:      seconds of history shown (optional, default 600)
+#   y_range:        [lowest, highest] value of a fixed y-axis (optional). Without it, the axis
+#                   follows the data. With log_y, use powers of ten, e.g. [1.0e-9, 1.0e+3].
+#                   Write numbers with a dot and a signed exponent, or YAML reads them as text.
+plots:
+  MAXI_VAC_plot:
+    source: maxi/vac/chamber_gauge/pressure           # PLACEHOLDER
+    refresh_period: 1.0
+    log_y: true
+    time_span: 600
+    y_range: [1.0e-9, 1.0e+3]
+  SHUTTER_VAC_plot:
+    source: maxi/vac/shutter_gauge/pressure           # PLACEHOLDER
+    refresh_period: 1.0
+    log_y: true
+    y_range: [1.0e-9, 1.0e+3]
+  DIFF_VAC_plot:
+    source: maxi/vac/diff_gauge/pressure              # PLACEHOLDER
+    refresh_period: 1.0
+    log_y: true
+    y_range: [1.0e-9, 1.0e+3]
+
+# Channels for the color and state rules in maxi_rules.py. Key: channel name used by a rule.
+# Value: Tango address of the attribute.
+extra_channels:
+  chamber_pressure: maxi/vac/chamber_gauge/pressure   # PLACEHOLDER  number: colors MAXICHAMBER
+  detector_temperature: maxi/detector/1/temperature   # PLACEHOLDER  number: colors DETECTOR
+  valve_open: maxi/vac/valve/is_open                  # PLACEHOLDER  boolean: VALVE_OPEN / VALVE_CLOSED
+  shutter_open: maxi/shutter/1/is_open                # PLACEHOLDER  boolean: SHUTTER_OPEN / SHUTTER_CLOSED

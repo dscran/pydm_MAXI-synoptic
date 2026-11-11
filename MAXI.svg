@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 508 285.75"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="MAXI.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#3d475c"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.4821948"
+     inkscape:cx="925.97432"
+     inkscape:cy="764.21397"
+     inkscape:window-width="1920"
+     inkscape:window-height="1008"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="background">
+    <rect
+       style="opacity:1;fill:#2e3436;stroke:#404040;stroke-width:1;stroke-dasharray:none;fill-opacity:1"
+       id="rect68"
+       width="508"
+       height="285.75"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     inkscape:label="hardware"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#ffffff;stroke-width:0.3"
+       x="4.3851824"
+       y="282.19727"
+       id="text1"
+       inkscape:label="date_time"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:0.3"
+         x="4.3851824"
+         y="282.19727">date/ time</tspan></text>
+    <rect
+       style="fill:#bfbfbf;stroke:#404040;stroke-width:0.999996;stroke-dasharray:none"
+       id="rect3"
+       width="35.927055"
+       height="48.290665"
+       x="-160.83853"
+       y="254.38417"
+       inkscape:label="BELLOW"
+       transform="rotate(-90)" />
+    <rect
+       style="fill:#73d216;stroke:#404040;stroke-width:0.999997;stroke-dasharray:none"
+       id="rect4"
+       width="85.481613"
+       height="54.481781"
+       x="-185.61581"
+       y="302.4754"
+       inkscape:label="SHUTTERCHAMBER"
+       transform="rotate(-90)" />
+    <rect
+       style="fill:#73d216;stroke:#404040;stroke-width:0.999997;stroke-dasharray:none"
+       id="rect7"
+       width="85.481613"
+       height="54.481781"
+       x="-185.16451"
+       y="392.86563"
+       inkscape:label="DIFFPUMP"
+       transform="rotate(-90)" />
+    <rect
+       style="fill:#bfbfbf;stroke:#404040;stroke-width:1;stroke-dasharray:none"
+       id="rect8"
+       width="35.927055"
+       height="48.290665"
+       x="-160.38722"
+       y="447.34741"
+       inkscape:label="BEAMLINE"
+       transform="rotate(-90)" />
+    <ellipse
+       style="fill:#edd400;stroke:#404040;stroke-width:1;stroke-dasharray:none"
+       id="path1"
+       cx="169.26123"
+       cy="142.875"
+       inkscape:label="MAXICHAMBER"
+       rx="92.247551"
+       ry="92.295364" />
+    <rect
+       style="fill:#3465a4;stroke:#404040;stroke-width:0.999997;stroke-dasharray:none"
+       id="rect2"
+       width="85.481613"
+       height="81.585068"
+       x="-185.61581"
+       y="5.9159827"
+       inkscape:label="MAXI_detector"
+       transform="rotate(-90)" />
+    <path
+       style="fill:#bfbfbf;stroke:#404040;stroke-width:2;stroke-dasharray:none"
+       d="m 104.04541,118.69313 v 48.36375"
+       id="path12"
+       inkscape:label="diode_BS" />
+    <path
+       style="fill:#bfbfbf;stroke:#404040;stroke-width:2;stroke-dasharray:none"
+       d="m 314.78552,118.69313 v 48.36375"
+       id="path34"
+       inkscape:label="SHUTTER" />
+    <g
+       id="g67"
+       inkscape:label="VALVE">
+      <rect
+         style="display:inline;fill:#bfbfbf;stroke:#404040;stroke-width:0.999996;stroke-dasharray:none"
+         id="rect6"
+         width="35.927059"
+         height="35.908443"
+         x="-160.38722"
+         y="356.95718"
+         inkscape:label="VALVE"
+         transform="rotate(-90)" />
+      <rect
+         style="display:inline;fill:#404040;stroke:#404040;stroke-width:1;stroke-dasharray:none"
+         id="rect66-9"
+         width="17.954224"
+         height="6.7152796"
+         x="365.9343"
+         y="124.46016"
+         ry="0"
+         inkscape:label="VALVE_OPEN" />
+      <rect
+         style="display:inline;fill:#404040;stroke:#404040;stroke-width:1;stroke-dasharray:none"
+         id="rect67"
+         width="17.954224"
+         height="6.7152796"
+         x="365.9343"
+         y="153.67194"
+         ry="0"
+         inkscape:label="VALVE_OPEN" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="animated">
+    <rect
+       style="display:none;opacity:1;fill:#404040;stroke:#404040;stroke-width:1;stroke-dasharray:none"
+       id="rect66"
+       width="17.954224"
+       height="35.927063"
+       x="365.9343"
+       y="124.46016"
+       ry="0"
+       inkscape:label="VALVE_CLOSED" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer7"
+     inkscape:label="assets">
+    <g
+       id="g77">
+      <g
+         id="g72"
+         inkscape:label="VALVE"
+         transform="translate(-112.4848,239.23595)"
+         style="display:inline;fill:#cc0000">
+        <rect
+           style="display:inline;fill:#cc0000;stroke:#404040;stroke-width:0.999996;stroke-dasharray:none"
+           id="rect70"
+           width="35.927059"
+           height="35.908443"
+           x="-160.38722"
+           y="356.95718"
+           inkscape:label="VALVE"
+           transform="rotate(-90)" />
+        <rect
+           style="display:inline;fill:#cc0000;stroke:#404040;stroke-width:1;stroke-dasharray:none"
+           id="rect71"
+           width="17.954224"
+           height="6.7152796"
+           x="365.9343"
+           y="124.46016"
+           ry="0"
+           inkscape:label="VALVE_OPEN" />
+        <rect
+           style="display:inline;fill:#cc0000;stroke:#404040;stroke-width:1;stroke-dasharray:none"
+           id="rect72"
+           width="17.954224"
+           height="6.7152796"
+           x="365.9343"
+           y="153.67194"
+           ry="0"
+           inkscape:label="VALVE_OPEN" />
+      </g>
+      <rect
+         style="display:inline;opacity:1;fill:#404040;stroke:#404040;stroke-width:1;stroke-dasharray:none"
+         id="rect73"
+         width="17.954224"
+         height="35.927071"
+         x="253.44949"
+         y="363.69608"
+         ry="0"
+         inkscape:label="VALVE_CLOSED" />
+    </g>
+    <g
+       id="g76"
+       inkscape:label="VALVE"
+       transform="translate(-65.562763,239.23595)"
+       style="display:inline">
+      <rect
+         style="display:inline;fill:#73d216;stroke:#404040;stroke-width:0.999996;stroke-dasharray:none"
+         id="rect74"
+         width="35.927059"
+         height="35.908443"
+         x="-160.38722"
+         y="356.95718"
+         inkscape:label="VALVE"
+         transform="rotate(-90)" />
+      <rect
+         style="display:inline;fill:#404040;stroke:#404040;stroke-width:1;stroke-dasharray:none"
+         id="rect75"
+         width="17.954224"
+         height="6.7152796"
+         x="365.9343"
+         y="124.46016"
+         ry="0"
+         inkscape:label="VALVE_OPEN" />
+      <rect
+         style="display:inline;fill:#404040;stroke:#404040;stroke-width:1;stroke-dasharray:none"
+         id="rect76"
+         width="17.954224"
+         height="6.7152796"
+         x="365.9343"
+         y="153.67194"
+         ry="0"
+         inkscape:label="VALVE_OPEN" />
+    </g>
+    <g
+       id="g80"
+       transform="translate(112.4848,-239.23595)">
+      <g
+         id="g79"
+         inkscape:label="VALVE"
+         transform="translate(-112.4848,239.23595)"
+         style="display:inline;fill:#cc0000">
+        <rect
+           style="display:inline;fill:#cc0000;stroke:#404040;stroke-width:0.999996;stroke-dasharray:none"
+           id="rect77"
+           width="35.927059"
+           height="35.908443"
+           x="-160.38722"
+           y="356.95718"
+           inkscape:label="VALVE"
+           transform="rotate(-90)" />
+        <rect
+           style="display:inline;fill:#cc0000;stroke:#404040;stroke-width:1;stroke-dasharray:none"
+           id="rect78"
+           width="17.954224"
+           height="6.7152796"
+           x="365.9343"
+           y="124.46016"
+           ry="0"
+           inkscape:label="VALVE_OPEN" />
+        <rect
+           style="display:inline;fill:#cc0000;stroke:#404040;stroke-width:1;stroke-dasharray:none"
+           id="rect79"
+           width="17.954224"
+           height="6.7152796"
+           x="365.9343"
+           y="153.67194"
+           ry="0"
+           inkscape:label="VALVE_OPEN" />
+      </g>
+      <rect
+         style="display:inline;opacity:1;fill:#404040;stroke:#404040;stroke-width:1;stroke-dasharray:none"
+         id="rect80"
+         width="17.954224"
+         height="35.927071"
+         x="253.44949"
+         y="363.69608"
+         ry="0"
+         inkscape:label="VALVE_CLOSED" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="helper"
+     style="display:inline">
+    <path
+       id="rect9"
+       style="display:inline;fill:#888a85;stroke:#000000;stroke-width:1;stroke-dasharray:none"
+       d="m 31.646546,-88.70623 h 51.785252 l 18.700232,11.987328 -18.700232,11.987327 H 31.646546 Z"
+       sodipodi:nodetypes="cccccc"
+       inkscape:label="helper_mag" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="hardware_L2">
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect9"
+       id="use9"
+       transform="matrix(0.8755553,0.87600912,-0.8755553,0.87600912,-2.191321,105.7465)"
+       style="display:inline;stroke-width:0.8074"
+       inkscape:label="mag4" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect9"
+       id="use10"
+       transform="matrix(-0.8755553,0.87600912,-0.8755553,-0.87600912,206.3705,-28.666419)"
+       style="display:inline;stroke-width:0.8074"
+       inkscape:label="mag3" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect9"
+       id="use11"
+       transform="matrix(0.8755553,-0.87600912,0.8755553,0.87600912,132.15197,314.41641)"
+       style="display:inline;stroke-width:0.8074"
+       inkscape:label="mag2" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect9"
+       id="use12"
+       transform="matrix(-0.8755553,-0.87600912,0.8755553,-0.87600912,340.7138,180.0035)"
+       style="display:inline;stroke-width:0.8074"
+       inkscape:label="mag1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="panels"
+     style="display:inline">
+    <g
+       id="g47"
+       inkscape:label="DETECTOR_panel"
+       transform="translate(0.62747709,-31.58326)">
+      <rect
+         style="opacity:0.8;fill:#ffffff;stroke:#404040;stroke-width:0.5;stroke-dasharray:none"
+         id="rect12"
+         width="74.317558"
+         height="65.65979"
+         x="8.7970886"
+         y="141.62837"
+         ry="5.2128587" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:0.499999;stroke-dasharray:none"
+         x="18.194056"
+         y="157.63814"
+         id="text12"
+         transform="scale(0.99974096,1.0002591)"><tspan
+           sodipodi:role="line"
+           id="tspan12"
+           style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+           x="18.194056"
+           y="157.63814">Detector</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+           x="18.194056"
+           y="169.98537"
+           id="tspan13">Status</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+           x="18.194056"
+           y="182.33258"
+           id="tspan14">Temp.</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+           x="18.194056"
+           y="194.67981"
+           id="tspan44">Temp. Setp.</tspan></text>
+    </g>
+    <g
+       id="g33"
+       inkscape:label="MAXI_VACUUM_panel"
+       transform="translate(0,-3.010578)">
+      <g
+         id="g46"
+         transform="translate(0,-13.045816)"
+         style="opacity:0.8">
+        <rect
+           style="fill:#ffffff;stroke:#404040;stroke-width:0.5;stroke-dasharray:none"
+           id="rect14"
+           width="113.37164"
+           height="79.605728"
+           x="112.57542"
+           y="22.412296"
+           ry="6.3200536" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:0.499999;stroke-dasharray:none"
+           x="130.97632"
+           y="47.963188"
+           id="text17"
+           transform="scale(0.99974096,1.0002591)"><tspan
+             sodipodi:role="line"
+             id="tspan15"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="130.97632"
+             y="47.963188">MAXI Vacuum</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="130.97632"
+             y="60.310413"
+             id="tspan17">pressure</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="130.97632"
+             y="72.657639"
+             id="tspan43">roughing pressure</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="130.97632"
+             y="85.00486"
+             id="tspan46">PyDMTimePlot</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g31"
+       transform="translate(-74.294828,-167.64958)"
+       inkscape:label="DIODE_panel">
+      <g
+         id="g48"
+         transform="translate(-3.5123352,-9.0317191)"
+         style="opacity:0.8">
+        <rect
+           style="fill:#ffffff;stroke:#404040;stroke-width:0.500001;stroke-dasharray:none"
+           id="rect18"
+           width="83.065193"
+           height="75.591629"
+           x="85.868607"
+           y="187.0513"
+           ry="6.0013671" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:0.499999;stroke-dasharray:none"
+           x="94.27404"
+           y="202.72487"
+           id="text19"
+           transform="scale(0.99974096,1.0002591)"><tspan
+             sodipodi:role="line"
+             id="tspan18"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="94.27404"
+             y="202.72487">Diode</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="94.27404"
+             y="215.0721"
+             id="tspan19">current</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="94.27404"
+             y="227.41931"
+             id="tspan20">amplification</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="94.27404"
+             y="239.76654"
+             id="tspan45">encoder on/off</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g32"
+       transform="translate(88.997809,182.46985)"
+       inkscape:label="MANET_panel">
+      <rect
+         style="opacity:0.8;fill:#ffffff;stroke:#404040;stroke-width:0.5;stroke-dasharray:none"
+         id="rect21"
+         width="120.1956"
+         height="71.075775"
+         x="21.484716"
+         y="25.406839"
+         ry="5.6428442" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:0.499999;stroke-dasharray:none"
+         x="37.701176"
+         y="45.850937"
+         id="text25"
+         transform="scale(0.99974096,1.0002591)"><tspan
+           sodipodi:role="line"
+           style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+           x="37.701176"
+           y="45.850937"
+           id="tspan25">Magnet</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+           x="37.701176"
+           y="58.198162"
+           id="tspan29">current amplitude</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+           x="37.701176"
+           y="70.545387"
+           id="tspan31">current angle</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+           x="37.701176"
+           y="82.892609"
+           id="tspan30" /></text>
+    </g>
+    <g
+       id="g38"
+       transform="translate(275.15156,182.46985)"
+       inkscape:label="SHUTTER_panel">
+      <rect
+         style="opacity:0.8;fill:#ffffff;stroke:#404040;stroke-width:0.5;stroke-dasharray:none"
+         id="rect34"
+         width="64.5"
+         height="49.5"
+         x="21.484716"
+         y="25.406839"
+         ry="3.9299014" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:0.499999;stroke-dasharray:none"
+         x="31.678469"
+         y="39.831348"
+         id="text38"
+         transform="scale(0.99974096,1.0002591)"><tspan
+           sodipodi:role="line"
+           style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+           x="31.678469"
+           y="39.831348"
+           id="tspan38">Shutter</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+           x="31.678469"
+           y="52.178574"
+           id="tspan41">mode</tspan><tspan
+           sodipodi:role="line"
+           style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+           x="31.678469"
+           y="64.525795"
+           id="tspan42">status</tspan></text>
+    </g>
+    <g
+       id="g52"
+       transform="translate(148.71435,-3.010578)"
+       inkscape:label="SHUTTER_VACUUM_panel">
+      <g
+         id="g51"
+         transform="translate(0,-13.045816)"
+         style="opacity:0.8">
+        <rect
+           style="fill:#ffffff;stroke:#404040;stroke-width:0.5;stroke-dasharray:none"
+           id="rect48"
+           width="113.37164"
+           height="79.605728"
+           x="112.57542"
+           y="22.412296"
+           ry="6.3200536" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:0.499999;stroke-dasharray:none"
+           x="130.97632"
+           y="47.963188"
+           id="text51"
+           transform="scale(0.99974096,1.0002591)"><tspan
+             sodipodi:role="line"
+             id="tspan48"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="130.97632"
+             y="47.963188">Shutter Vacuum</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="130.97632"
+             y="60.310413"
+             id="tspan49">pressure</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="130.97632"
+             y="72.657639"
+             id="tspan50">roughing pressure</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="130.97632"
+             y="85.00486"
+             id="tspan51">PyDMTimePlot</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g56"
+       transform="translate(275.08848,182.18943)"
+       inkscape:label="DIFFPUMP_VACUUM_panel">
+      <g
+         id="g55"
+         transform="translate(0,-13.045816)"
+         style="opacity:0.8">
+        <g
+           id="g57"
+           transform="translate(0,-5.6767909)">
+          <rect
+             style="fill:#ffffff;stroke:#404040;stroke-width:0.5;stroke-dasharray:none"
+             id="rect52"
+             width="113.37164"
+             height="57.608162"
+             x="112.57542"
+             y="44.409863"
+             ry="4.5736241" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:0.499999;stroke-dasharray:none"
+             x="130.97632"
+             y="57.540291"
+             id="text55"
+             transform="scale(0.99974096,1.0002591)"><tspan
+               sodipodi:role="line"
+               id="tspan52"
+               style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+               x="130.97632"
+               y="57.540291">Diff Vacuum</tspan><tspan
+               sodipodi:role="line"
+               style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+               x="130.97632"
+               y="69.887512"
+               id="tspan53">pressure</tspan><tspan
+               sodipodi:role="line"
+               style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+               x="130.97632"
+               y="82.234741"
+               id="tspan54">roughing pressure</tspan><tspan
+               sodipodi:role="line"
+               style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+               x="130.97632"
+               y="94.581963"
+               id="tspan55">PyDMTimePlot</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g63"
+       transform="translate(275.08848,-3.010578)"
+       inkscape:label="BEAMLINE_panel">
+      <g
+         id="g62"
+         transform="translate(0,-13.045816)"
+         style="opacity:0.8">
+        <rect
+           style="fill:#ffffff;stroke:#404040;stroke-width:0.5;stroke-dasharray:none"
+           id="rect59"
+           width="113.37164"
+           height="79.605728"
+           x="112.57542"
+           y="22.412296"
+           ry="6.3200536" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:none;stroke-width:0.499999;stroke-dasharray:none"
+           x="134.19679"
+           y="41.208763"
+           id="text62"
+           transform="scale(0.99974096,1.0002591)"><tspan
+             sodipodi:role="line"
+             id="tspan59"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="134.19679"
+             y="41.208763">Beamline</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="134.19679"
+             y="53.555988"
+             id="tspan62">Status</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="134.19679"
+             y="65.903214"
+             id="tspan64">Energy</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="134.19679"
+             y="78.250435"
+             id="tspan65">Polarization</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:9.87778px;fill:#000000;stroke:none;stroke-width:0.5"
+             x="134.19679"
+             y="90.597664"
+             id="tspan66">Exitslit</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

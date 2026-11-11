@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 1920 1080"
+   version="1.1"
+   id="fixture"
+   sodipodi:docname="fixture.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <rect id="BACKGROUND" x="0" y="0" width="1920" height="1080" style="fill:#2e3436;stroke:none" />
+  <circle id="CIRCLE" inkscape:label="circle" cx="400" cy="500" r="100"
+     style="fill:#73d216;stroke:#404040;stroke-width:4" />
+  <rect id="COVER" x="400" y="380" width="200" height="60" style="fill:#ffffff;stroke:none" />
+  <g id="outer" inkscape:groupmode="layer" transform="translate(1000,100)">
+    <g id="inner" transform="translate(20,30)">
+      <rect id="SLOT_value" x="10" y="20" width="200" height="40"
+         style="fill:#ffffff;stroke:#babdb6;stroke-width:2" />
+      <circle id="MOVED_CIRCLE" cx="100" cy="400" r="50" style="fill:#3465a4;stroke:none" />
+      <rect id="PLAIN" x="0" y="600" width="10" height="10" />
+    </g>
+  </g>
+  <g id="STATE_ON" transform="translate(0,-700)" style="display:none">
+    <rect id="STATE_ON_body" x="1500" y="1500" width="100" height="100" style="fill:#73d216" />
+  </g>
+  <rect id="FIX_plot" x="100" y="700" width="400" height="200" style="fill:#ffffff;stroke:#babdb6;stroke-width:2" />
+  <rect id="DATETIME_value" x="24" y="1016" width="340" height="40" style="fill:#232829;stroke:#555753;stroke-width:1.5" />
+  <rect id="STATE_OFF" x="1500" y="800" width="100" height="100" style="fill:#cc0000" />
+  <rect id="STATE_UNKNOWN" x="1500" y="800" width="100" height="100" style="display:none;fill:#bfbfbf" />
+</svg>
