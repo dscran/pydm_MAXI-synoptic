@@ -34,7 +34,7 @@ The distribution SHALL declare `pydm` and `pytango` as runtime dependencies, and
 - **THEN** the panel and the simulator start
 
 ### Requirement: Bundled resources
-The installed package SHALL contain the panel's Designer file, the style sheet, the images of the drawing, and the configurations `default.json` and `sim.json`, and the panel SHALL load them from the installed package, independent of the current directory.
+The installed package SHALL contain the panel's Designer file, the Designer files of the valve and the shutter, the style sheet, the images of the drawing, and the configurations `default.json` and `sim.json`, and the panel SHALL load them from the installed package, independent of the current directory.
 
 #### Scenario: Start outside the checkout
 - **WHEN** the panel is started from a directory that contains no project files
@@ -42,7 +42,7 @@ The installed package SHALL contain the panel's Designer file, the style sheet, 
 
 #### Scenario: Images found next to the Designer file
 - **WHEN** the package is installed into a different environment
-- **THEN** the panel shows the drawing and every state drawing, without settings for their location
+- **THEN** the panel shows the drawing, the valve and the shutter, without settings for their location
 
 ### Requirement: Panel command
 Installing the distribution SHALL provide the command `maxi-synoptic`, which starts PyDM with the installed Designer file and style sheet. The option `--config <value>` selects the configuration; its signals are passed to PyDM as macros. All other arguments SHALL be passed to PyDM unchanged, except PyDM's own `-m`/`--macro`, which is refused.
