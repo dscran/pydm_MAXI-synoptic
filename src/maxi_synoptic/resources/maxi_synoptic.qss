@@ -26,54 +26,87 @@ PyDMLabel[alarmSensitiveBorder="true"][alarmSeverity="4"] {
     border: 2px dashed #a3adb8;
 }
 
-/* Chamber and detector: their rules set the colour; an unknown value is gray with purple hatching.
-   When the value is known again, PyDM sets the brush back and the rule sets the colour. */
+/* Chamber, detector and differential pump stage: their rules set the colour; an unknown value is gray
+   with purple hatching. When the value is known again, PyDM sets the brush back and the rule sets the
+   colour. */
 PyDMDrawingCircle#chamber[alarmSeverity="3"],
 PyDMDrawingCircle#chamber[alarmSeverity="4"],
 PyDMDrawingRectangle#detector[alarmSeverity="3"],
-PyDMDrawingRectangle#detector[alarmSeverity="4"] {
+PyDMDrawingRectangle#detector[alarmSeverity="4"],
+PyDMDrawingRectangle#diffpump[alarmSeverity="3"],
+PyDMDrawingRectangle#diffpump[alarmSeverity="4"] {
     qproperty-brush: qlineargradient(spread:repeat, x1:0, y1:0, x2:0.04, y2:0.04,
         stop:0 #6b7480, stop:0.5 #6b7480, stop:0.51 #8e5ea2, stop:1 #8e5ea2);
 }
 
-/* Valve, shutter and beam: the UNKNOWN drawings while the value is unknown. The rules for severities
-   0 to 2 (a known value, also with ALARM or WARNING quality) repeat the imageFiles of the symbols in
-   maxi_synoptic.ui; tests/test_ui.py checks that they agree.
-   The beam behind the valve is drawn while the valve is unknown: wrongly showing beam is the safer
-   mistake. */
-PyDMSymbol#beam_valve[alarmSeverity="0"],
-PyDMSymbol#beam_valve[alarmSeverity="1"],
-PyDMSymbol#beam_valve[alarmSeverity="2"] {
-    qproperty-imageFiles: '{"0": "assets/BEAM_VALVE_CLOSED.svg", "1": "assets/BEAM_VALVE_OPEN.svg"}';
+/* Valve (valve.ui) and shutter (shutter.ui): their rules set the body colour or frame pen, the gate or
+   blades, and which word is shown. An unknown value shows a gray body or frame with a large "?", and no
+   gate, no blades and no word. A valve value without a state (not 0, 1 or 2) looks the same: its rules
+   make the body gray and clear the gate, and show valve_out_of_range, a second "?" at the same place. The style sheet sets no brush or pen at severities 0 to 2: a value set
+   here stays set, and the next value runs the rules, which set it again. Words and "?" use color,
+   which the style sheet resets by itself. */
+PyDMLabel#valve_word_closed,
+PyDMLabel#valve_word_open,
+PyDMLabel#valve_word_moving,
+PyDMLabel#shutter_word_open,
+PyDMLabel#shutter_word_closed {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d3d9df;
 }
-PyDMSymbol#beam_valve[alarmSeverity="3"],
-PyDMSymbol#beam_valve[alarmSeverity="4"] {
-    qproperty-imageFiles: '{"0": "assets/BEAM_VALVE_OPEN.svg", "1": "assets/BEAM_VALVE_OPEN.svg"}';
+PyDMLabel#valve_unknown,
+PyDMLabel#shutter_unknown {
+    font-size: 64px;
+    font-weight: bold;
+    color: transparent;
 }
-PyDMSymbol#beam_shutter[alarmSeverity="0"],
-PyDMSymbol#beam_shutter[alarmSeverity="1"],
-PyDMSymbol#beam_shutter[alarmSeverity="2"] {
-    qproperty-imageFiles: '{"0": "assets/beam_shutter_none.svg", "1": "assets/BEAM_SHUTTER_OPEN.svg", "2": "assets/BEAM_SHUTTER_CLOSED.svg"}';
+PyDMLabel#valve_word_closed[alarmSeverity="3"],
+PyDMLabel#valve_word_closed[alarmSeverity="4"],
+PyDMLabel#valve_word_open[alarmSeverity="3"],
+PyDMLabel#valve_word_open[alarmSeverity="4"],
+PyDMLabel#valve_word_moving[alarmSeverity="3"],
+PyDMLabel#valve_word_moving[alarmSeverity="4"],
+PyDMLabel#shutter_word_open[alarmSeverity="3"],
+PyDMLabel#shutter_word_open[alarmSeverity="4"],
+PyDMLabel#shutter_word_closed[alarmSeverity="3"],
+PyDMLabel#shutter_word_closed[alarmSeverity="4"] {
+    color: transparent;
 }
-PyDMSymbol#beam_shutter[alarmSeverity="3"],
-PyDMSymbol#beam_shutter[alarmSeverity="4"] {
-    qproperty-imageFiles: '{"0": "assets/BEAM_SHUTTER_UNKNOWN.svg", "1": "assets/BEAM_SHUTTER_UNKNOWN.svg", "2": "assets/BEAM_SHUTTER_UNKNOWN.svg"}';
+/* Dark on the gray valve body, gray on the dark shutter frame */
+PyDMLabel#valve_unknown[alarmSeverity="3"],
+PyDMLabel#valve_unknown[alarmSeverity="4"] {
+    color: #262b31;
 }
-PyDMSymbol#valve[alarmSeverity="0"],
-PyDMSymbol#valve[alarmSeverity="1"],
-PyDMSymbol#valve[alarmSeverity="2"] {
-    qproperty-imageFiles: '{"0": "assets/VALVE_CLOSED.svg", "1": "assets/VALVE_OPEN.svg"}';
+PyDMLabel#valve_out_of_range {
+    font-size: 64px;
+    font-weight: bold;
+    color: #262b31;
 }
-PyDMSymbol#valve[alarmSeverity="3"],
-PyDMSymbol#valve[alarmSeverity="4"] {
-    qproperty-imageFiles: '{"0": "assets/VALVE_UNKNOWN.svg", "1": "assets/VALVE_UNKNOWN.svg"}';
+PyDMLabel#shutter_unknown[alarmSeverity="3"],
+PyDMLabel#shutter_unknown[alarmSeverity="4"] {
+    color: #6b7480;
 }
-PyDMSymbol#shutter[alarmSeverity="0"],
-PyDMSymbol#shutter[alarmSeverity="1"],
-PyDMSymbol#shutter[alarmSeverity="2"] {
-    qproperty-imageFiles: '{"0": "assets/SHUTTER_CLOSED.svg", "1": "assets/SHUTTER_OPEN.svg"}';
+PyDMDrawingRectangle#valve_body[alarmSeverity="3"],
+PyDMDrawingRectangle#valve_body[alarmSeverity="4"] {
+    qproperty-brush: #6b7480;
 }
-PyDMSymbol#shutter[alarmSeverity="3"],
-PyDMSymbol#shutter[alarmSeverity="4"] {
-    qproperty-imageFiles: '{"0": "assets/SHUTTER_UNKNOWN.svg", "1": "assets/SHUTTER_UNKNOWN.svg"}';
+PyDMDrawingRectangle#shutter_frame[alarmSeverity="3"],
+PyDMDrawingRectangle#shutter_frame[alarmSeverity="4"] {
+    qproperty-penColor: #6b7480;
+}
+PyDMDrawingRectangle#valve_gate_top[alarmSeverity="3"],
+PyDMDrawingRectangle#valve_gate_top[alarmSeverity="4"],
+PyDMDrawingRectangle#valve_gate_upper[alarmSeverity="3"],
+PyDMDrawingRectangle#valve_gate_upper[alarmSeverity="4"],
+PyDMDrawingRectangle#valve_gate_lower[alarmSeverity="3"],
+PyDMDrawingRectangle#valve_gate_lower[alarmSeverity="4"],
+PyDMDrawingRectangle#valve_gate_bottom[alarmSeverity="3"],
+PyDMDrawingRectangle#valve_gate_bottom[alarmSeverity="4"],
+PyDMDrawingRectangle#shutter_blade_top[alarmSeverity="3"],
+PyDMDrawingRectangle#shutter_blade_top[alarmSeverity="4"],
+PyDMDrawingRectangle#shutter_blade_mid[alarmSeverity="3"],
+PyDMDrawingRectangle#shutter_blade_mid[alarmSeverity="4"],
+PyDMDrawingRectangle#shutter_blade_bottom[alarmSeverity="3"],
+PyDMDrawingRectangle#shutter_blade_bottom[alarmSeverity="4"] {
+    qproperty-brush: transparent;
 }

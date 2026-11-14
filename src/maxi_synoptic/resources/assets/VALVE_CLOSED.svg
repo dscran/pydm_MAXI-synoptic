@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" viewBox="1310 442 196 184" width="196" height="184">
-  <defs id="defs1" />
-  <g id="VALVE_CLOSED" inkscape:label="VALVE_CLOSED" style="">
-    <rect id="VALVE_CLOSED_body" x="1340" y="484" width="136" height="136" style="fill:#cf5b5b;stroke:#aab4bf;stroke-width:3" />
-    <rect id="VALVE_CLOSED_gate" x="1378" y="487" width="60" height="130" style="fill:#262b31;stroke:none" />
-    <text id="VALVE_CLOSED_word" xml:space="preserve" x="1408.0" y="470" style="font-family:sans-serif;font-size:22px;font-weight:bold;fill:#cf5b5b;text-anchor:middle">CLOSED</text>
-  </g>
-</svg>

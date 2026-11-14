@@ -19,7 +19,6 @@
     <rect id="PIPE_valve" x="1272" y="506" width="272" height="92" style="fill:#48515c;stroke:#aab4bf;stroke-width:2.5" />
     <rect id="BEAMLINE" inkscape:label="BEAMLINE" x="1772" y="506" width="123.5173" height="92" style="fill:#48515c;stroke:#aab4bf;stroke-width:2.5" />
     <rect id="SHUTTERCHAMBER" inkscape:label="SHUTTERCHAMBER" x="1040" y="434" width="236" height="236" style="fill:#48515c;stroke:#aab4bf;stroke-width:2.5" />
-    <rect id="DIFFPUMP" inkscape:label="DIFFPUMP" x="1540" y="434" width="236" height="236" style="fill:#48515c;stroke:#aab4bf;stroke-width:2.5" />
   </g>
   <g id="layer_panels" inkscape:groupmode="layer" inkscape:label="panels">
     <g id="DETECTOR_panel" inkscape:label="DETECTOR_panel">

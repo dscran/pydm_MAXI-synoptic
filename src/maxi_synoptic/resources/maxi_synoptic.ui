@@ -102,6 +102,82 @@
     <string>[{"name": "cold", "property": "Set Brush Color", "initial_value": "", "expression": "QColor('#4b8fc4') if ch[0] &lt;= 15 else QColor('#6b7480')", "channels": [{"channel": "${detector_temp}", "trigger": true, "use_enum": false}], "notes": ""}]</string>
    </property>
   </widget>
+  <widget class="PyDMDrawingRectangle" name="diffpump">
+   <property name="geometry">
+    <rect>
+     <x>1537</x>
+     <y>431</y>
+     <width>241</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string>${diff_vac_pressure}</string>
+   </property>
+   <property name="brush" stdset="0">
+    <brush brushstyle="SolidPattern">
+     <color alpha="255">
+      <red>107</red>
+      <green>116</green>
+      <blue>128</blue>
+     </color>
+    </brush>
+   </property>
+   <property name="penStyle" stdset="0">
+    <enum>Qt::SolidLine</enum>
+   </property>
+   <property name="penColor" stdset="0">
+    <color alpha="255">
+     <red>170</red>
+     <green>180</green>
+     <blue>191</blue>
+    </color>
+   </property>
+   <property name="penWidth" stdset="0">
+    <double>2.5</double>
+   </property>
+   <property name="rules" stdset="0">
+    <string>[{"name": "pressure bands", "property": "Set Brush Color", "initial_value": "", "expression": "QColor('#4fae7b') if ch[0] &lt;= 1e-7 else (QColor('#d6a544') if ch[0] &lt;= 1e-6 else (QColor('#cf5b5b') if ch[0] &lt;= 700 else QColor('#6b7480')))", "channels": [{"channel": "${diff_vac_pressure}", "trigger": true, "use_enum": false}], "notes": ""}]</string>
+   </property>
+  </widget>
+  <widget class="PyDMEmbeddedDisplay" name="valve">
+   <property name="geometry">
+    <rect>
+     <x>1310</x>
+     <y>442</y>
+     <width>196</width>
+     <height>184</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="macros" stdset="0">
+    <string>{"ch": "${valve_state}"}</string>
+   </property>
+   <property name="filename" stdset="0">
+    <string>valve.ui</string>
+   </property>
+  </widget>
+  <widget class="PyDMEmbeddedDisplay" name="shutter">
+   <property name="geometry">
+    <rect>
+     <x>1094</x>
+     <y>432</y>
+     <width>128</width>
+     <height>214</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="macros" stdset="0">
+    <string>{"ch": "${shutter_open}"}</string>
+   </property>
+   <property name="filename" stdset="0">
+    <string>shutter.ui</string>
+   </property>
+  </widget>
   <widget class="PyDMDrawingImage" name="foreground">
    <property name="geometry">
     <rect>
@@ -113,70 +189,6 @@
    </property>
    <property name="filename" stdset="0">
     <string>assets/foreground.svg</string>
-   </property>
-  </widget>
-  <widget class="PyDMSymbol" name="valve">
-   <property name="geometry">
-    <rect>
-     <x>1310</x>
-     <y>442</y>
-     <width>196</width>
-     <height>184</height>
-    </rect>
-   </property>
-   <property name="channel" stdset="0">
-    <string>${valve_open}</string>
-   </property>
-   <property name="imageFiles" stdset="0">
-    <string>{"0": "assets/VALVE_CLOSED.svg", "1": "assets/VALVE_OPEN.svg"}</string>
-   </property>
-  </widget>
-  <widget class="PyDMSymbol" name="shutter">
-   <property name="geometry">
-    <rect>
-     <x>1094</x>
-     <y>432</y>
-     <width>128</width>
-     <height>214</height>
-    </rect>
-   </property>
-   <property name="channel" stdset="0">
-    <string>${shutter_open}</string>
-   </property>
-   <property name="imageFiles" stdset="0">
-    <string>{"0": "assets/SHUTTER_CLOSED.svg", "1": "assets/SHUTTER_OPEN.svg"}</string>
-   </property>
-  </widget>
-  <widget class="PyDMSymbol" name="beam_valve">
-   <property name="geometry">
-    <rect>
-     <x>1187</x>
-     <y>545</y>
-     <width>296</width>
-     <height>14</height>
-    </rect>
-   </property>
-   <property name="channel" stdset="0">
-    <string>${valve_open}</string>
-   </property>
-   <property name="imageFiles" stdset="0">
-    <string>{"0": "assets/BEAM_VALVE_CLOSED.svg", "1": "assets/BEAM_VALVE_OPEN.svg"}</string>
-   </property>
-  </widget>
-  <widget class="PyDMSymbol" name="beam_shutter">
-   <property name="geometry">
-    <rect>
-     <x>546</x>
-     <y>545</y>
-     <width>655</width>
-     <height>14</height>
-    </rect>
-   </property>
-   <property name="channel" stdset="0">
-    <string>calc://beam_shutter?v=${valve_open_calc}&amp;s=${shutter_open_calc}&amp;expr=0%20if%20not%20v%20else%20%281%20if%20s%20else%202%29</string>
-   </property>
-   <property name="imageFiles" stdset="0">
-    <string>{"0": "assets/beam_shutter_none.svg", "1": "assets/BEAM_SHUTTER_OPEN.svg", "2": "assets/BEAM_SHUTTER_CLOSED.svg"}</string>
    </property>
   </widget>
   <widget class="PyDMLabel" name="DIODE_current_value">
@@ -916,14 +928,14 @@
    <header>pydm.widgets.drawing</header>
   </customwidget>
   <customwidget>
+   <class>PyDMEmbeddedDisplay</class>
+   <extends>QFrame</extends>
+   <header>pydm.widgets.embedded_display</header>
+  </customwidget>
+  <customwidget>
    <class>PyDMLabel</class>
    <extends>QLabel</extends>
    <header>pydm.widgets.label</header>
-  </customwidget>
-  <customwidget>
-   <class>PyDMSymbol</class>
-   <extends>QWidget</extends>
-   <header>pydm.widgets.symbol</header>
   </customwidget>
   <customwidget>
    <class>PyDMTimePlot</class>

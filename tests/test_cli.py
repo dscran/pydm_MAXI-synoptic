@@ -78,13 +78,19 @@ def test_missing_signal(write_config, sim_signals):
     assert "'shutter_open' is missing" in error
 
 
+def test_old_valve_signal(write_config, sim_signals):
+    sim_signals["valve_open"] = sim_signals.pop("valve_state")
+    (error,) = config_errors_of(["--config", str(write_config(sim_signals))])
+    assert "'valve_state' is missing" in error
+
+
 def test_several_errors_together(write_config, sim_signals):
-    del sim_signals["shutter_open"], sim_signals["valve_open"]
+    del sim_signals["shutter_open"], sim_signals["valve_state"]
     sim_signals["detector_temp"] = 12
     errors = config_errors_of(["--config", str(write_config(sim_signals))])
     assert len(errors) == 3
     assert any("'shutter_open'" in error for error in errors)
-    assert any("'valve_open'" in error for error in errors)
+    assert any("'valve_state'" in error for error in errors)
     assert any("'detector_temp'" in error and "12" in error for error in errors)
 
 
@@ -137,9 +143,9 @@ def test_pydm_command_line(sim_signals):
 
 def test_calc_macros_have_encoded_hash(sim_signals):
     macros = macros_of(cli.pydm_argv(["--config", "sim"]))
-    assert macros["valve_open_calc"] == sim_signals["valve_open"].replace("#", "%23")
+    assert macros["valve_state_calc"] == sim_signals["valve_state"].replace("#", "%23")
     assert macros["shutter_open_calc"] == sim_signals["shutter_open"].replace("#", "%23")
-    assert "#" not in macros["valve_open_calc"]
+    assert "#" not in macros["valve_state_calc"]
 
 
 def test_pydm_options_pass_through():

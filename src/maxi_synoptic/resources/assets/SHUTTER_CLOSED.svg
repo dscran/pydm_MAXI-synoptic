@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" viewBox="1094 432 128 214" width="128" height="214">
-  <defs id="defs1" />
-  <g id="SHUTTER_CLOSED" inkscape:label="SHUTTER_CLOSED" style="">
-    <rect id="SHUTTER_CLOSED_frame" x="1124" y="474" width="68" height="166" style="fill:#262b31;stroke:#4b8fc4;stroke-width:4" />
-    <rect id="SHUTTER_CLOSED_blade" x="1132" y="482" width="52" height="150" style="fill:#4b8fc4;stroke:none" />
-    <text id="SHUTTER_CLOSED_word" xml:space="preserve" x="1158" y="462" style="font-family:sans-serif;font-size:22px;font-weight:bold;fill:#4b8fc4;text-anchor:middle">CLOSED</text>
-  </g>
-</svg>

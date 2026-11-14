@@ -19,6 +19,6 @@
   "magnet_current_angle": "tango://localhost:45678/maxi/sim/1/magnet_current_angle#dbase=no",
   "shutter_panel_mode": "tango://localhost:45678/maxi/sim/1/shutter_panel_mode#dbase=no",
   "shutter_panel_status": "tango://localhost:45678/maxi/sim/1/shutter_panel_status#dbase=no",
-  "valve_open": "tango://localhost:45678/maxi/sim/1/valve_open#dbase=no",
+  "valve_state": "tango://localhost:45678/maxi/sim/1/valve_state#dbase=no",
   "shutter_open": "tango://localhost:45678/maxi/sim/1/shutter_open#dbase=no"
 }

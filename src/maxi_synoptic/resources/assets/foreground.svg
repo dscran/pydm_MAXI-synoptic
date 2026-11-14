@@ -18,5 +18,4 @@
     <path id="MAG3" inkscape:label="MAG3" d="M 50,-24 L 140,-24 L 140,24 L 50,24 L 32,0 Z" transform="translate(658,552) rotate(225)" style="fill:#262b31;stroke:#aab4bf;stroke-width:2.5;stroke-linejoin:round" />
     <path id="MAG4" inkscape:label="MAG4" d="M 50,-24 L 140,-24 L 140,24 L 50,24 L 32,0 Z" transform="translate(658,552) rotate(315)" style="fill:#262b31;stroke:#aab4bf;stroke-width:2.5;stroke-linejoin:round" />
   </g>
-  <path id="BEAM_entry" inkscape:label="beam: entry to valve" d="M 1894,552 H 1476" style="fill:none;stroke:#f0c75e;stroke-width:6" />
 </svg>

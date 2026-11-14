@@ -38,7 +38,7 @@ The panel SHALL show a read-only value label over each value slot of the drawing
 - **THEN** the label shows the INVALID alarm border and the INVALID text colour of the style sheet
 
 ### Requirement: Plot overlays
-The panel SHALL show a time plot of the chamber, shutter-chamber and diffusion-pump pressures over the plot slots `MAXI_VAC_plot`, `SHUTTER_VAC_plot` and `DIFF_VAC_plot`. Each plot adds the latest value every second, even when the value has not changed, shows the last 600 s on a logarithmic y-axis fixed at 1e-9 to 1e3, and starts empty.
+The panel SHALL show a time plot of the chamber, shutter-chamber and differential-pump-stage pressures over the plot slots `MAXI_VAC_plot`, `SHUTTER_VAC_plot` and `DIFF_VAC_plot`. Each plot adds the latest value every second, even when the value has not changed, shows the last 600 s on a logarithmic y-axis fixed at 1e-9 to 1e3, and starts empty.
 
 #### Scenario: Slowly changing value
 - **WHEN** a plotted pressure does not change for 60 s

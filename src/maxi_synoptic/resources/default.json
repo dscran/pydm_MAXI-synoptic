@@ -19,6 +19,6 @@
   "magnet_current_angle": "tango://maxi-ctrl:10000/maxi/magnet/1/current_angle",
   "shutter_panel_mode": "tango://maxi-ctrl:10000/maxi/shutter/1/mode",
   "shutter_panel_status": "tango://maxi-ctrl:10000/maxi/shutter/1/status_text",
-  "valve_open": "tango://maxi-ctrl:10000/maxi/vac/valve/is_open",
+  "valve_state": "tango://maxi-ctrl:10000/maxi/vac/valve/state",
   "shutter_open": "tango://maxi-ctrl:10000/maxi/shutter/1/is_open"
 }

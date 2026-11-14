@@ -28,9 +28,13 @@ TEMPERATURE = {"unit": "°C", "format": "%.1f"}
 DRIFT_TICK_SECONDS = 0.5
 PRESSURE_RANGE = (1e-7, 1000.0)
 PRESSURE_PERIOD_SECONDS = 60.0
+DIFF_PRESSURE_RANGE = (1e-8, 1000.0)
+DIFF_PRESSURE_PERIOD_SECONDS = 50.0
 TEMPERATURE_RANGE = (-40.0, 30.0)
 TEMPERATURE_PERIOD_SECONDS = 40.0
-VALVE_TOGGLE_SECONDS = 10.0
+VALVE_CLOSED, VALVE_OPEN, VALVE_MOVING = 0, 1, 2
+# The valve's drift cycle: each state and how long it lasts, in seconds
+VALVE_CYCLE = ((VALVE_CLOSED, 10.0), (VALVE_MOVING, 3.0), (VALVE_OPEN, 10.0), (VALVE_MOVING, 3.0))
 SHUTTER_TOGGLE_SECONDS = 7.0
 
 
@@ -67,7 +71,7 @@ ATTRIBUTES = (
     SimAttribute("magnet_current_angle", 45.0, "deg", "%.1f"),
     SimAttribute("shutter_panel_mode", "manual"),
     SimAttribute("shutter_panel_status", "closed"),
-    SimAttribute("valve_open", False),
+    SimAttribute("valve_state", VALVE_CLOSED),
     SimAttribute("shutter_open", False),
 )
 ATTRIBUTE_NAMES = tuple(spec.name for spec in ATTRIBUTES)
@@ -79,10 +83,20 @@ def triangle(elapsed: float, period: float) -> float:
     return 1 - abs(2 * phase - 1)
 
 
+def log_triangle(elapsed: float, limits: tuple[float, float], period: float) -> float:
+    """A triangle wave between two limits on a logarithmic scale."""
+    low, high = (math.log10(limit) for limit in limits)
+    return 10 ** (low + (high - low) * triangle(elapsed, period))
+
+
 def drift_pressure(elapsed: float) -> float:
-    """The chamber pressure in drift mode: a triangle wave on a logarithmic scale."""
-    low, high = (math.log10(limit) for limit in PRESSURE_RANGE)
-    return 10 ** (low + (high - low) * triangle(elapsed, PRESSURE_PERIOD_SECONDS))
+    """The chamber pressure in drift mode."""
+    return log_triangle(elapsed, PRESSURE_RANGE, PRESSURE_PERIOD_SECONDS)
+
+
+def drift_diff_pressure(elapsed: float) -> float:
+    """The differential pump stage pressure in drift mode."""
+    return log_triangle(elapsed, DIFF_PRESSURE_RANGE, DIFF_PRESSURE_PERIOD_SECONDS)
 
 
 def drift_temperature(elapsed: float) -> float:
@@ -95,12 +109,24 @@ def drift_toggle(elapsed: float, interval: float) -> bool:
     return int(elapsed // interval) % 2 == 1
 
 
+def drift_valve(elapsed: float) -> int:
+    """The valve state in drift mode: CLOSED, MOVING, OPEN, MOVING, repeated."""
+    cycle_seconds = sum(duration for _, duration in VALVE_CYCLE)
+    time_in_cycle = elapsed % cycle_seconds
+    for state, duration in VALVE_CYCLE:
+        if time_in_cycle < duration:
+            return state
+        time_in_cycle -= duration
+    return VALVE_CYCLE[-1][0]  # not reached; only for rounding at the end of the cycle
+
+
 def drift_values(elapsed: float) -> dict[str, Any]:
     """The values of all drifting attributes after `elapsed` seconds."""
     return {
         "maxi_vac_pressure": drift_pressure(elapsed),
+        "diff_vac_pressure": drift_diff_pressure(elapsed),
         "detector_temp": drift_temperature(elapsed),
-        "valve_open": drift_toggle(elapsed, VALVE_TOGGLE_SECONDS),
+        "valve_state": drift_valve(elapsed),
         "shutter_open": drift_toggle(elapsed, SHUTTER_TOGGLE_SECONDS),
     }
 

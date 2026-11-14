@@ -8,13 +8,13 @@ import pytest
 REPO_DIR = Path(__file__).resolve().parent.parent
 RESOURCE_FILES = [
     "maxi_synoptic.ui",
+    "valve.ui",
+    "shutter.ui",
     "maxi_synoptic.qss",
     "default.json",
     "sim.json",
     "assets/background.svg",
     "assets/foreground.svg",
-    "assets/VALVE_UNKNOWN.svg",
-    "assets/beam_shutter_none.svg",
 ]
 DEPENDENCIES = {"pydm", "pytango"}
 
