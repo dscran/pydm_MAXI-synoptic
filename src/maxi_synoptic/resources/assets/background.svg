@@ -61,19 +61,19 @@
     <g id="MAGNET_panel" inkscape:label="MAGNET_panel">
       <rect id="MAGNET_panel_bg" x="24" y="756" width="372" height="244" rx="12" style="fill:#2a3038;stroke:#3d4651;stroke-width:1.5" />
       <text id="MAGNET_title" xml:space="preserve" x="40" y="792" style="font-family:sans-serif;font-size:25px;font-weight:bold;fill:#e9ecef;text-anchor:start">Magnet</text>
-      <text id="MAGNET_current_amplitude_label" xml:space="preserve" x="40" y="827" style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Current amplitude</text>
-      <rect id="MAGNET_current_amplitude_value" x="38" y="834" width="344" height="56" rx="6" style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
-      <text id="MAGNET_current_angle_label" xml:space="preserve" x="40" y="921" style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Current angle</text>
-      <rect id="MAGNET_current_angle_value" x="38" y="928" width="344" height="56" rx="6" style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <text id="MAGNET_current_in_plane_label" xml:space="preserve" x="40" y="827" style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">In-plane current</text>
+      <rect id="MAGNET_current_in_plane_value" x="38" y="834" width="344" height="56" rx="6" style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
+      <text id="MAGNET_current_out_of_plane_label" xml:space="preserve" x="40" y="921" style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Out-of-plane current</text>
+      <rect id="MAGNET_current_out_of_plane_value" x="38" y="928" width="344" height="56" rx="6" style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
     </g>
     <g id="DIODE_panel" inkscape:label="DIODE_panel">
       <rect id="DIODE_panel_bg" x="420" y="756" width="476" height="244" rx="12" style="fill:#2a3038;stroke:#3d4651;stroke-width:1.5" />
       <text id="DIODE_title" xml:space="preserve" x="436" y="792" style="font-family:sans-serif;font-size:25px;font-weight:bold;fill:#e9ecef;text-anchor:start">Diode</text>
       <text id="DIODE_current_label" xml:space="preserve" x="436.0" y="827" style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Current</text>
       <rect id="DIODE_current_value" x="434.0" y="834" width="219.0" height="56" rx="6" style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
-      <text id="DIODE_amplification_label" xml:space="preserve" x="665.0" y="827" style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Amplification</text>
+      <text id="DIODE_amplification_label" xml:space="preserve" x="665.0" y="827" style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Amplification (V/A)</text>
       <rect id="DIODE_amplification_value" x="663.0" y="834" width="219.0" height="56" rx="6" style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
-      <text id="DIODE_encoder_label" xml:space="preserve" x="436.0" y="921" style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Encoder</text>
+      <text id="DIODE_encoder_label" xml:space="preserve" x="436.0" y="921" style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Encoder mode</text>
       <rect id="DIODE_encoder_value" x="434.0" y="928" width="219.0" height="56" rx="6" style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
     </g>
     <g id="SHUTTER_PANEL_panel" inkscape:label="SHUTTER_PANEL_panel">

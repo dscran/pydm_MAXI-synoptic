@@ -142,7 +142,7 @@ def test_pydm_command_line(sim_signals):
 
 
 def test_signal_used_only_in_calc_channel_is_needed():
-    assert {"diode_amplification", "shutter_panel_mode"} <= cli.panel_signals()
+    assert {"diode_amplification", "diode_encoder", "shutter_panel_mode"} <= cli.panel_signals()
     assert not any(name.endswith(cli.CALC_SUFFIX) for name in cli.panel_signals())
 
 

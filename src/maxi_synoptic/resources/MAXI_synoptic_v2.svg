@@ -474,13 +474,13 @@
          y="792"
          style="font-family:sans-serif;font-size:25px;font-weight:bold;fill:#e9ecef;text-anchor:start">Magnet</text>
       <text
-         id="MAGNET_current_amplitude_label"
+         id="MAGNET_current_in_plane_label"
          xml:space="preserve"
          x="40"
          y="827"
-         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Current amplitude</text>
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">In-plane current</text>
       <rect
-         id="MAGNET_current_amplitude_value"
+         id="MAGNET_current_in_plane_value"
          x="38"
          y="834"
          width="344"
@@ -488,13 +488,13 @@
          rx="6"
          style="fill:#15181c;stroke:#4a5460;stroke-width:1.5" />
       <text
-         id="MAGNET_current_angle_label"
+         id="MAGNET_current_out_of_plane_label"
          xml:space="preserve"
          x="40"
          y="921"
-         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Current angle</text>
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Out-of-plane current</text>
       <rect
-         id="MAGNET_current_angle_value"
+         id="MAGNET_current_out_of_plane_value"
          x="38"
          y="928"
          width="344"
@@ -538,7 +538,7 @@
          xml:space="preserve"
          x="665.0"
          y="827"
-         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Amplification</text>
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Amplification (V/A)</text>
       <rect
          id="DIODE_amplification_value"
          x="663.0"
@@ -552,7 +552,7 @@
          xml:space="preserve"
          x="436.0"
          y="921"
-         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Encoder</text>
+         style="font-family:sans-serif;font-size:19px;font-weight:normal;fill:#a3adb8;text-anchor:start">Encoder mode</text>
       <rect
          id="DIODE_encoder_value"
          x="434.0"

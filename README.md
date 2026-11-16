@@ -194,7 +194,8 @@ must be added to both bundled configurations. In a `calc://` channel, use `${<si
 command fills with the address with `#` encoded. `DIODE_amplification_value` does so: the device gives the
 exponent of the gain, and `calc://diode_amplification?x=${diode_amplification_calc}&expr=10**x` shows
 10 to that power. `SHUTTER_PANEL_mode_value` turns the integer shutter mode into words the same way, with
-`expr={0: 'HW AND SW', 1: 'HW OR SW', 2: 'SW ONLY', 3: 'HW ONLY'}.get(x, 'UNKNOWN')`.
+`expr={0: 'HW AND SW', 1: 'HW OR SW', 2: 'SW ONLY', 3: 'HW ONLY'}.get(x, 'UNKNOWN')`, and
+`DIODE_encoder_value` the encoder sensor mode with `expr={0: 'OFF', 1: 'ON', 2: 'POWERSAVE'}.get(x, 'UNKNOWN')`.
 
 | To change | Widget | Property |
 |---|---|---|

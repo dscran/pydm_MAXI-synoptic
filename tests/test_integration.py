@@ -222,6 +222,14 @@ def test_shutter_mode_shows_words(qtbot, display, simulator, mode, text):
     simulator[0].device.shutter_panel_mode = 0
 
 
+@pytest.mark.parametrize("mode, text", [(0, "OFF"), (1, "ON"), (2, "POWERSAVE"), (3, "UNKNOWN")])
+def test_encoder_mode_shows_words(qtbot, display, simulator, mode, text):
+    label = display.findChild(PyDMLabel, "DIODE_encoder_value")
+    simulator[0].device.diode_encoder = mode
+    qtbot.waitUntil(lambda: label.text() == text, timeout=CONNECT_TIMEOUT_MS)
+    simulator[0].device.diode_encoder = 0
+
+
 def test_chamber_and_detector_colors(qtbot, display, simulator):
     device = simulator[0].device
     wait_for_fill(qtbot, display, "detector", BLUE)

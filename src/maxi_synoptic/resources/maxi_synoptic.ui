@@ -269,13 +269,13 @@
     </rect>
    </property>
    <property name="channel" stdset="0">
-    <string>${diode_encoder}</string>
+    <string>calc://diode_encoder?x=${diode_encoder_calc}&amp;expr={0: 'OFF', 1: 'ON', 2: 'POWERSAVE'}.get(x, 'UNKNOWN')</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
    <property name="showUnits" stdset="0">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="alarmSensitiveBorder" stdset="0">
     <bool>true</bool>
@@ -663,7 +663,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="PyDMLabel" name="MAGNET_current_amplitude_value">
+  <widget class="PyDMLabel" name="MAGNET_current_in_plane_value">
    <property name="geometry">
     <rect>
      <x>38</x>
@@ -673,7 +673,7 @@
     </rect>
    </property>
    <property name="channel" stdset="0">
-    <string>${magnet_current_amplitude}</string>
+    <string>${magnet_current_in_plane}</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -688,7 +688,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="PyDMLabel" name="MAGNET_current_angle_value">
+  <widget class="PyDMLabel" name="MAGNET_current_out_of_plane_value">
    <property name="geometry">
     <rect>
      <x>38</x>
@@ -698,7 +698,7 @@
     </rect>
    </property>
    <property name="channel" stdset="0">
-    <string>${magnet_current_angle}</string>
+    <string>${magnet_current_out_of_plane}</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
