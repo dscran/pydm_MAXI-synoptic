@@ -15,10 +15,10 @@
   "detector_status": "tango://curie.maxi.lab:10000/maxi/ccd/lotte/status",
   "detector_temp": "tango://curie.maxi.lab:10000/maxi/ccd/lotte/temperature",
   "detector_temp_setpoint": "tango://curie.maxi.lab:10000/maxi/ccd/lotte/temperature_setpoint",
-  "magnet_current_in_plane": "tango://curie.maxi.lab:10000/pm/rotmagctrl/1/position",
-  "magnet_current_out_of_plane": "tango://curie.maxi.lab:10000/pm/rotmagctrl/2/position",
+  "magnet_current_in_plane": "tango://curie.maxi.lab:10000/pm/rotmagctrl/2/position",
+  "magnet_current_out_of_plane": "tango://curie.maxi.lab:10000/pm/rotmagctrl/1/position",
   "shutter_panel_mode": "tango://curie.maxi.lab:10000/maxi/beckhoff/1/shuttermode",
-  "shutter_panel_status": "tango://curie.maxi.lab:10000/maxi/beckhoff/1/shutterstatus",
+  "shutter_panel_status": "tango://curie.maxi.lab:10000/maxi/beckhoff/1/shutteroutput",
   "valve_state": "tango://curie.maxi.lab:10000/maxi/beckhoff/1/valvestate",
   "shutter_open": "tango://curie.maxi.lab:10000/maxi/beckhoff/1/shutteroutput"
 }
