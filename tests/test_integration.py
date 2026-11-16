@@ -202,6 +202,26 @@ def test_values_have_units_and_formats(qtbot, display, simulator):
     qtbot.waitUntil(lambda: curve.points_accumulated >= 2, timeout=UPDATE_TIMEOUT_MS)
 
 
+def test_amplification_shows_power_of_ten(qtbot, display, simulator):
+    # The device gives the exponent; a calc channel shows 10 to that power
+    label = display.findChild(PyDMLabel, "DIODE_amplification_value")
+    qtbot.waitUntil(lambda: label.text() == "1e+06", timeout=CONNECT_TIMEOUT_MS)
+    simulator[0].device.diode_amplification = 9
+    qtbot.waitUntil(lambda: label.text() == "1e+09", timeout=UPDATE_TIMEOUT_MS)
+    simulator[0].device.diode_amplification = 6
+
+
+@pytest.mark.parametrize(
+    "mode, text",
+    [(0, "HW AND SW"), (1, "HW OR SW"), (2, "SW ONLY"), (3, "HW ONLY"), (4, "UNKNOWN"), (-1, "UNKNOWN")],
+)
+def test_shutter_mode_shows_words(qtbot, display, simulator, mode, text):
+    label = display.findChild(PyDMLabel, "SHUTTER_PANEL_mode_value")
+    simulator[0].device.shutter_panel_mode = mode
+    qtbot.waitUntil(lambda: label.text() == text, timeout=CONNECT_TIMEOUT_MS)
+    simulator[0].device.shutter_panel_mode = 0
+
+
 def test_chamber_and_detector_colors(qtbot, display, simulator):
     device = simulator[0].device
     wait_for_fill(qtbot, display, "detector", BLUE)

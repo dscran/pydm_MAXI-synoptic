@@ -141,6 +141,11 @@ def test_pydm_command_line(sim_signals):
     assert argv[-3:] == PANEL_FILES
 
 
+def test_signal_used_only_in_calc_channel_is_needed():
+    assert {"diode_amplification", "shutter_panel_mode"} <= cli.panel_signals()
+    assert not any(name.endswith(cli.CALC_SUFFIX) for name in cli.panel_signals())
+
+
 def test_calc_macros_have_encoded_hash(sim_signals):
     macros = macros_of(cli.pydm_argv(["--config", "sim"]))
     assert macros["valve_state_calc"] == sim_signals["valve_state"].replace("#", "%23")

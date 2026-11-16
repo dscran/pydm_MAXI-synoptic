@@ -52,7 +52,8 @@ class SimAttribute:
 
 ATTRIBUTES = (
     SimAttribute("diode_current", 1.5e-9, "A", "%.3e"),
-    SimAttribute("diode_amplification", 1e6, "V/A", "%.0e"),
+    # The exponent of the gain in V/A, like the Femto amplifier: 6 is 1e6 V/A
+    SimAttribute("diode_amplification", 6, "", "%d"),
     SimAttribute("diode_encoder", 12.5, "mm", "%.3f"),
     SimAttribute("maxi_vac_pressure", 2e-7, **PRESSURE),
     SimAttribute("maxi_vac_roughing_pressure", 3e-2, **PRESSURE),
@@ -69,7 +70,8 @@ ATTRIBUTES = (
     SimAttribute("detector_temp_setpoint", -40.0, **TEMPERATURE),
     SimAttribute("magnet_current_amplitude", 2.0, "A", "%.3f"),
     SimAttribute("magnet_current_angle", 45.0, "deg", "%.1f"),
-    SimAttribute("shutter_panel_mode", "manual"),
+    # 0 HW AND SW, 1 HW OR SW, 2 SW ONLY, 3 HW ONLY, like the Beckhoff `shuttermode`
+    SimAttribute("shutter_panel_mode", 0, "", "%d"),
     SimAttribute("shutter_panel_status", "closed"),
     SimAttribute("valve_state", VALVE_CLOSED),
     SimAttribute("shutter_open", False),

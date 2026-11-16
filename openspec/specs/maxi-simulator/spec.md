@@ -8,7 +8,7 @@ tested and demonstrated without the real control system or a Tango database.
 ## Requirements
 
 ### Requirement: Simulated attributes
-The simulator SHALL provide one Tango device, `maxi/sim/1`, with an attribute for every value slot, plot and rule channel of the MAXI panel. Pressures and other numeric slots are float attributes with unit and format set; status, mode and polarization slots are strings; the valve state `valve_state` is an integer (0 closed, 1 open, 2 moving); the shutter `shutter_open` is a boolean.
+The simulator SHALL provide one Tango device, `maxi/sim/1`, with an attribute for every value slot, plot and rule channel of the MAXI panel. Pressures and other numeric slots are float attributes with unit and format set; status and polarization slots are strings; the diode amplification `diode_amplification` is an integer, the exponent of the gain in V/A (6 is 1e6 V/A), like the Femto amplifier; the shutter mode `shutter_panel_mode` is an integer (0 HW AND SW, 1 HW OR SW, 2 SW ONLY, 3 HW ONLY); the valve state `valve_state` is an integer (0 closed, 1 open, 2 moving); the shutter `shutter_open` is a boolean.
 
 #### Scenario: Pressure attribute
 - **WHEN** a client reads the chamber pressure attribute of `maxi/sim/1`

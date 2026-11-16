@@ -19,7 +19,7 @@ The panel SHALL show the MAXI drawing at a fixed size of 1920x1080 pixels, unsca
 - **THEN** the drawing and all values keep their size and position, and only the top-left part of the panel is visible
 
 ### Requirement: Value overlays
-The panel SHALL show a read-only value label over each value slot of the drawing (each element whose id ends in `_value`, except `DATETIME_value`), connected to the channel of that signal. The label shows the Tango unit, uses the number format given for that slot, and shows the PyDM alarm border for the attribute quality.
+The panel SHALL show a read-only value label over each value slot of the drawing (each element whose id ends in `_value`, except `DATETIME_value`), connected to the channel of that signal. The label shows the Tango unit, uses the number format given for that slot, and shows the PyDM alarm border for the attribute quality. The exception is `DIODE_amplification_value`: the device gives the exponent of the gain, so the label reads it through a `calc://` channel that computes `10**x`, and shows the result in the format `%.0e` (e.g. `1e+06`) without a unit. `SHUTTER_PANEL_mode_value` likewise reads the integer shutter mode through a `calc://` channel that shows `HW AND SW` (0), `HW OR SW` (1), `SW ONLY` (2), `HW ONLY` (3), or `UNKNOWN` for any other value.
 
 #### Scenario: Label placement
 - **WHEN** the panel runs at its fixed size

@@ -110,9 +110,9 @@ def config_errors(signals: object, needed: set[str]) -> list[str]:
 
 
 def panel_signals() -> set[str]:
-    """The signals that the panel's Designer file uses, without those that the command adds."""
+    """The signals that the panel's Designer file uses; `${<signal>_calc}` uses `<signal>`."""
     used = set(MACRO_PATTERN.findall(UI_FILE.read_text()))
-    return {name for name in used if not name.endswith(CALC_SUFFIX)}
+    return {name.removesuffix(CALC_SUFFIX) for name in used}
 
 
 def panel_macros(signals: dict[str, str]) -> dict[str, str]:

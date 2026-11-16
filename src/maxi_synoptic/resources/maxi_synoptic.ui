@@ -235,13 +235,13 @@
     </rect>
    </property>
    <property name="channel" stdset="0">
-    <string>${diode_amplification}</string>
+    <string>calc://diode_amplification?x=${diode_amplification_calc}&amp;expr=10**x</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
    <property name="showUnits" stdset="0">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="alarmSensitiveBorder" stdset="0">
     <bool>true</bool>
@@ -723,13 +723,13 @@
     </rect>
    </property>
    <property name="channel" stdset="0">
-    <string>${shutter_panel_mode}</string>
+    <string>calc://shutter_panel_mode?x=${shutter_panel_mode_calc}&amp;expr={0: 'HW AND SW', 1: 'HW OR SW', 2: 'SW ONLY', 3: 'HW ONLY'}.get(x, 'UNKNOWN')</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
    <property name="showUnits" stdset="0">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="alarmSensitiveBorder" stdset="0">
     <bool>true</bool>
