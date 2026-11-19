@@ -7,7 +7,7 @@
    changes a property needs its own rule. */
 
 /* Around the drawing, when the window is larger than the panel */
-QWidget#MaxiSynoptic {
+PyDMMainWindow {
     background: #1e2227;
 }
 
