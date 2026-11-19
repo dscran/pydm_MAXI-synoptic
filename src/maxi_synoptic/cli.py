@@ -23,7 +23,7 @@ UI_FILE = RESOURCES_DIR / "maxi_synoptic.ui"
 STYLE_SHEET = RESOURCES_DIR / "maxi_synoptic.qss"
 CONFIG_SUFFIX = ".json"
 DEFAULT_CONFIG = "default"
-BUNDLED_CONFIGS = {name: RESOURCES_DIR / f"{name}{CONFIG_SUFFIX}" for name in ("default", "sim")}
+BUNDLED_CONFIGS = {name: RESOURCES_DIR / f"{name}{CONFIG_SUFFIX}" for name in ("default", "sim", "mte")}
 
 # A calc:// channel is a URL, which ends at the first `#`. The signals used inside the calc channel of
 # the .ui therefore get a second macro, `<signal>_calc`, with `#` encoded.

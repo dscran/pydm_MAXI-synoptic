@@ -23,7 +23,7 @@
     <string>${ch}</string>
    </property>
    <property name="rules" stdset="0">
-    <string>[{"name": "state colour", "property": "Set Brush Color", "initial_value": "", "expression": "QColor({0: '#cf5b5b', 1: '#4fae7b', 2: '#d6a544'}.get(ch[0], '#6b7480'))", "channels": [{"channel": "${ch}", "trigger": true, "use_enum": false}], "notes": ""}]</string>
+    <string>[{"name": "state colour", "property": "Set Brush Color", "initial_value": "", "expression": "QColor({2: '#cf5b5b', 1: '#4fae7b', 0: '#d6a544'}.get(ch[0], '#6b7480'))", "channels": [{"channel": "${ch}", "trigger": true, "use_enum": false}], "notes": ""}]</string>
    </property>
    <property name="brush" stdset="0">
     <brush brushstyle="SolidPattern">
@@ -117,7 +117,7 @@
     <string>${ch}</string>
    </property>
    <property name="rules" stdset="0">
-    <string>[{"name": "gate", "property": "Set Brush Color", "initial_value": "", "expression": "QColor('#262b31') if ch[0] in (0,) else QColor(0, 0, 0, 0)", "channels": [{"channel": "${ch}", "trigger": true, "use_enum": false}], "notes": ""}]</string>
+    <string>[{"name": "gate", "property": "Set Brush Color", "initial_value": "", "expression": "QColor('#262b31') if ch[0] in (2,) else QColor(0, 0, 0, 0)", "channels": [{"channel": "${ch}", "trigger": true, "use_enum": false}], "notes": ""}]</string>
    </property>
    <property name="brush" stdset="0">
     <brush brushstyle="SolidPattern">
@@ -247,7 +247,7 @@
     <bool>false</bool>
    </property>
    <property name="rules" stdset="0">
-    <string>[{"name": "shown when CLOSED", "property": "Visible", "initial_value": "", "expression": "ch[0] == 0", "channels": [{"channel": "${ch}", "trigger": true, "use_enum": false}], "notes": ""}]</string>
+    <string>[{"name": "shown when CLOSED", "property": "Visible", "initial_value": "", "expression": "ch[0] == 2", "channels": [{"channel": "${ch}", "trigger": true, "use_enum": false}], "notes": ""}]</string>
    </property>
   </widget>
   <widget class="PyDMLabel" name="valve_word_open">
@@ -309,7 +309,7 @@
     <bool>false</bool>
    </property>
    <property name="rules" stdset="0">
-    <string>[{"name": "shown when MOVING", "property": "Visible", "initial_value": "", "expression": "ch[0] == 2", "channels": [{"channel": "${ch}", "trigger": true, "use_enum": false}], "notes": ""}]</string>
+    <string>[{"name": "shown when MOVING", "property": "Visible", "initial_value": "", "expression": "ch[0] == 0", "channels": [{"channel": "${ch}", "trigger": true, "use_enum": false}], "notes": ""}]</string>
    </property>
   </widget>
  </widget>

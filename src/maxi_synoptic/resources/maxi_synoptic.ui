@@ -235,7 +235,7 @@
     </rect>
    </property>
    <property name="channel" stdset="0">
-    <string>calc://diode_amplification?x=${diode_amplification_calc}&amp;expr=10**x</string>
+    <string>calc://diode_amplification?x=${diode_amplification_calc}&amp;expr=10**(3+x)</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -723,7 +723,7 @@
     </rect>
    </property>
    <property name="channel" stdset="0">
-    <string>calc://shutter_panel_mode?x=${shutter_panel_mode_calc}&amp;expr={0: 'HW AND SW', 1: 'HW OR SW', 2: 'SW ONLY', 3: 'HW ONLY'}.get(x, 'UNKNOWN')</string>
+    <string>calc://shutter_panel_mode?x=${shutter_panel_mode_calc}&amp;expr={0: 'HW OR SW', 1: 'HW AND SW', 2: 'SW ONLY', 3: 'HW ONLY'}.get(x, 'UNKNOWN')</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
